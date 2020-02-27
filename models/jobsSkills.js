@@ -12,9 +12,9 @@ module.exports = function(sequelize, DataTypes) {
         description: DataTypes.STRING
       });
   
-      //Setting foreign key for tblJobsSkills
-      Jobs.hasMany(JobSkills, {as: 'job_id'});
-      Skills.hasMany(JobSkills, {foreignKey: 'skill_id'});
+      // Adding job_ID and skill_ID to tblJobsSkills
+      Jobs.hasMany(JobSkills, {foreignKey: 'job_id', onDelete: "cascade"});
+      Skills.hasMany(JobSkills, {foreignKey: 'skill_id', onDelete: "cascade"});
 
     return JobSkills;
   };

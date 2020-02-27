@@ -1,7 +1,7 @@
 module.exports = function(sequelize, DataTypes) {
-    var UserTypes = sequelize.define("tblUsersTypes", {
-      
+    var UserType = sequelize.define("tblUserType", {
+      type: DataTypes.STRING
     });
-    return UserTypes;
+    return UserType;
   };
   
