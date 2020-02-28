@@ -9,7 +9,7 @@ module.exports = function (sequelize, DataTypes) {
   });
 
   // Adding location_id to tblJobs
-  Locations.hasMany(Jobs, { foreignKey: 'location_id', onDelete: "cascade" });
-
+  Locations.hasMany(Jobs, {foreignKey: 'location_id', onDelete: "cascade"});
   return Jobs;
+  
 };
