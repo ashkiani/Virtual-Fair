@@ -1,10 +1,10 @@
 var db = require("../models");
 
-module.exports = function (app) {
+module.exports = function(app) {
   app.get("/api/jobs", async (req, res) => {
     try {
       console.log(db.tblJobs);
-      db.tblJobs.findAll({}).then(function (allJobs) {
+      db.tblJobs.findAll({}).then(allJobs => {
         res.json(allJobs);
       });
     } catch (err) {
@@ -45,6 +45,27 @@ module.exports = function (app) {
         jobTitle: "test job2",
         jobSkills: ["skill1", "skill3"],
         jobRequirements: ["req5", "req2"]
+      });
+      res.json(result);
+    } catch (err) {
+      console.log(err);
+      res.send("Error occurred:" + err);
+    }
+  });
+
+  app.get("/api/locations", async (req, res) => {
+    try {
+      console.log("api get received at /api/locations");
+      //it returns an array of job objects that include location id and location name. The front-end can use this to populate the drop-downs, etc...
+      //object below is for initial testing only. The plan is to populate it from the database.
+      let result = [];
+      result.push({
+        locationId: "1",
+        locationName: "Location1"
+      });
+      result.push({
+        locationId: "2",
+        locationName: "Location2"
       });
       res.json(result);
     } catch (err) {
