@@ -1,12 +1,28 @@
-var db = require("../models");
+//var db = require("../models");
+let jobs = [];
+jobs.push({
+  jobId: "1",
+  jobTitle: "test job1",
+  jobSkills: ["skill1", "skill2"],
+  jobRequirements: ["req1", "req2"]
+});
+jobs.push({
+  jobId: "2",
+  jobTitle: "test job2",
+  jobSkills: ["skill1", "skill3"],
+  jobRequirements: ["req5", "req2"]
+});
 
 module.exports = function(app) {
   app.get("/api/jobs", async (req, res) => {
     try {
-      console.log(db.tblJobs);
-      db.tblJobs.findAll({}).then(allJobs => {
-        res.json(allJobs);
-      });
+      console.log("api get received at /api/jobs");
+      res.json(jobs);
+      //jobs
+      // console.log(db.tblJobs);
+      // db.tblJobs.findAll({}).then(allJobs => {
+      //   res.json(allJobs);
+      // });
     } catch (err) {
       console.log(err);
       res.send("Error occurred:" + err);
@@ -33,20 +49,7 @@ module.exports = function(app) {
       // });
       //it returns an array of job objects that include job id, job title and job skills and job requirements.
       //object below is for initial testing only. The plan is to populate it from the database.
-      let result = [];
-      result.push({
-        jobId: "1",
-        jobTitle: "test job1",
-        jobSkills: ["skill1", "skill2"],
-        jobRequirements: ["req1", "req2"]
-      });
-      result.push({
-        jobId: "2",
-        jobTitle: "test job2",
-        jobSkills: ["skill1", "skill3"],
-        jobRequirements: ["req5", "req2"]
-      });
-      res.json(result);
+      res.json(jobs);
     } catch (err) {
       console.log(err);
       res.send("Error occurred:" + err);
