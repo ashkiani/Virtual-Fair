@@ -56,7 +56,7 @@ module.exports = function(app) {
   app.get("/api/locations", async (req, res) => {
     try {
       console.log("api get received at /api/locations");
-      //it returns an array of job objects that include location id and location name. The front-end can use this to populate the drop-downs, etc...
+      //it returns an array of objects that include location id and location name. The front-end can use this to populate the drop-downs, etc...
       //object below is for initial testing only. The plan is to populate it from the database.
       let result = [];
       result.push({
@@ -66,6 +66,27 @@ module.exports = function(app) {
       result.push({
         locationId: "2",
         locationName: "Location2"
+      });
+      res.json(result);
+    } catch (err) {
+      console.log(err);
+      res.send("Error occurred:" + err);
+    }
+  });
+
+  app.get("/api/skills", async (req, res) => {
+    try {
+      console.log("api get received at /api/skills");
+      //it returns an array of objects that include skill id and skill title. The front-end can use this to populate the drop-downs, etc...
+      //object below is for initial testing only. The plan is to populate it from the database.
+      let result = [];
+      result.push({
+        skillId: "1",
+        skillTitle: "Skill1"
+      });
+      result.push({
+        skillId: "2",
+        skillTitle: "skill2"
       });
       res.json(result);
     } catch (err) {
