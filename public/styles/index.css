@@ -1,0 +1,485 @@
+* {
+    box-sizing: border-box;
+}
+
+
+/* NAV BAR STARTS */
+
+.navbar {
+    margin-top: -50px;
+    width: 100%;
+    overflow: auto;
+    font-family: 'Coda Caption', sans-serif;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+.navbar a {
+    color: #fff;
+    border-radius: 8px;
+    background-color: background: #CE5937;
+    background: -moz-linear-gradient(-45deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
+    background: -webkit-linear-gradient(-45deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
+    background: linear-gradient(135deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
+    float: left;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 17px;
+    width: 20%;
+    text-align: center;
+    transition: transform .2s;
+}
+
+
+/* Add a background color on mouse-over */
+
+.navbar a:hover {
+    transform: scale(1.1)
+}
+
+
+/* Add responsiveness - on screens less than 500px, make the navigation links appear on top of each other, instead of next to each other */
+
+@media screen and (max-width: 500px) {
+    .navbar a {
+        float: none;
+        display: block;
+        width: 100%;
+        overflow: hidden;
+        margin-top: 20px;
+        /* If you want the text to be left-aligned on small screens */
+    }
+}
+
+
+/* END OF NAVBAR */
+
+
+/* jumbotron image */
+
+#imageDisplay {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("./images/use.gif");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+
+#text {
+    color: #fff;
+    margin-top: 150px;
+    font-family: 'Coda Caption', sans-serif;
+}
+
+#textSub {
+    color: #fff;
+    margin-top: 60px;
+    font-family: 'Coda Caption', sans-serif;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+#demo {
+    border: none;
+    outline: none;
+    margin-top: 20px;
+    border-radius: 8px;
+    color: #fff;
+    background: #CE5937;
+    background: -moz-linear-gradient(-45deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
+    background: -webkit-linear-gradient(-45deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
+    background: linear-gradient(135deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
+    font-size: 20px;
+    transition: transform .2s;
+    padding: 12px 30px 12px 30px;
+    font-family: 'Coda Caption', sans-serif;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+#demo:hover {
+    transform: scale(1.1)
+}
+
+
+/* end of jumbotron image */
+
+
+/* sub JUMBOTRON*/
+
+#subJumbotron {
+    margin-top: 150px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.mySlides {
+    margin-top: 100px;
+    height: auto;
+    border-radius: 8px;
+    max-width: 150%;
+    margin: auto;
+}
+
+#one {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#change-text {
+    color: background: #CE5937;
+    background: -moz-linear-gradient(-45deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
+    background: -webkit-linear-gradient(-45deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
+    background: linear-gradient(135deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
+    color: #e0dfdc;
+    letter-spacing: .1em;
+    text-shadow: 0 -1px 0 #fff, 0 1px 0 #2e2e2e, 0 2px 0 #2c2c2c, 0 3px 0 #2a2a2a, 0 4px 0 #282828, 0 5px 0 #262626, 0 6px 0 #242424, 0 7px 0 #222, 0 8px 0 #202020, 0 9px 0 #1e1e1e, 0 10px 0 #1c1c1c, 0 11px 0 #1a1a1a, 0 12px 0 #181818, 0 13px 0 #161616, 0 14px 0 #141414, 0 15px 0 #121212, 0 22px 30px rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+/* end of JUMBOTRON */
+
+
+/* jumbotron 3 */
+
+#jumbotron3 {
+    background-color: #515151;
+    margin-top: 100px;
+    margin-bottom: 200px;
+}
+
+.card-group {
+    text-align: center;
+}
+
+.card {
+    margin: 20px;
+    padding: 20px 30px 20px 30px;
+    color: background: #CE5937;
+    background: -moz-linear-gradient(-45deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
+    background: -webkit-linear-gradient(-45deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
+    background: linear-gradient(135deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
+    color: #fff;
+}
+
+
+/* end of jumbotron 3 */
+
+
+/* jumbotron for text */
+
+#jumbotron4 {
+    background-color: #fff;
+}
+
+.booth {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.row {
+    margin-bottom: 200px;
+}
+
+#col {
+    text-align: center;
+    padding-top: 100px;
+    border-radius: 8px;
+    line-height: 2rem;
+    background: #CE5937;
+    background: -moz-linear-gradient(-45deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
+    background: -webkit-linear-gradient(-45deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
+    background: linear-gradient(135deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
+    color: #fff;
+}
+
+h2 {
+    margin-bottom: 15px;
+}
+
+
+/* end of jumbotron for text */
+
+
+/* contact */
+
+#contact {
+    padding: 100px;
+    margin-top: -100px;
+    text-align: center;
+    background-color: #515151;
+    color: #fff;
+}
+
+form {
+    max-width: 70%;
+    position: relative;
+    left: 15%;
+}
+
+.form-row {
+    margin-top: 20px;
+}
+
+.form-group {
+    max-width: 70%;
+    position: relative;
+    left: 15%;
+}
+
+textarea {
+    resize: none;
+}
+
+.chat {
+    margin-bottom: 50px;
+}
+
+.contact {
+    margin-bottom: 50px;
+}
+
+
+/* end of contact */
+
+
+/* social */
+
+#social {
+    margin-top: 100px;
+    margin-bottom: -100px;
+}
+
+.fa-facebook-square {
+    margin: 10px;
+    padding: 20px;
+    color: #fff;
+    border-radius: 50%;
+    background-color: background: #CE5937;
+    background: -moz-linear-gradient(-45deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
+    background: -webkit-linear-gradient(-45deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
+    background: linear-gradient(135deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
+    transition: transform .2s;
+}
+
+.fa-instagram {
+    margin: 10px;
+    padding: 20px;
+    color: #fff;
+    border-radius: 50%;
+    background-color: background: #CE5937;
+    background: -moz-linear-gradient(-45deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
+    background: -webkit-linear-gradient(-45deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
+    background: linear-gradient(135deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
+    transition: transform .2s;
+}
+
+.fa-twitter {
+    margin: 10px;
+    padding: 20px;
+    color: #fff;
+    border-radius: 50%;
+    background-color: background: #CE5937;
+    background: -moz-linear-gradient(-45deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
+    background: -webkit-linear-gradient(-45deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
+    background: linear-gradient(135deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
+    transition: transform .2s;
+}
+
+
+/*end of social */
+
+
+/* services */
+
+#vf {
+    margin-top: 150px;
+    text-align: center;
+}
+
+#row1 {
+    margin-top: 50px;
+}
+
+#row2 {
+    margin-top: -120px;
+}
+
+.col-md-3 {
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: background: #CE5937;
+    background: -moz-linear-gradient(-45deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
+    background: -webkit-linear-gradient(-45deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
+    background: linear-gradient(135deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
+    padding: 20px;
+    color: #fff;
+}
+
+
+/* end of services */
+
+
+/* modal for demo video */
+
+.modalDialog {
+    position: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+    opacity: 0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+
+.target {
+    width: 800px;
+    position: relative;
+    bottom: 16%;
+    margin: 10% auto;
+    padding: 5px 20px 13px 20px;
+    border-radius: 10px;
+    background: #fff;
+    background: -moz-linear-gradient(#fff, #999);
+    background: -webkit-linear-gradient(#fff, #999);
+    background: -o-linear-gradient(#fff, #999);
+    background: -moz-linear-gradient(-45deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
+    background: -webkit-linear-gradient(-45deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
+    background: linear-gradient(135deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
+}
+
+.demo {
+    color: #fff;
+    letter-spacing: 10px;
+}
+
+iframe {
+    border-radius: 10px;
+}
+
+.modalDialog:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#close {
+    background: #606061;
+    color: #ffffff;
+    line-height: 25px;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 3px #000;
+}
+
+#close:hover {
+    background: #00d9ff;
+}
+
+
+/* end of modal for demo video */
+
+
+/* meet the team */
+
+.column {
+    margin-bottom: 16px;
+    padding: 0 8px;
+}
+
+@media screen and (max-width: 650px) {
+    .column {
+        width: 100%;
+        display: block;
+    }
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.container {
+    padding: 0 16px;
+    border-radius: 10px;
+}
+
+.container::after,
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.title {
+    color: #fff;
+}
+
+.button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 10px;
+    font-family: 'Coda Caption', sans-serif;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+.button:hover {
+    background-color: #555;
+}
+
+.center {
+    text-align: center;
+    text-shadow: 2px 2px 2px #515151;
+    padding: 30px;
+    letter-spacing: 10px;
+    border-radius: 10px;
+    font-family: 'Coda Caption', sans-serif;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+#squad {
+    margin-top: -120px;
+}
+
+#teamL {}
+
+#teamM {}
+
+
+/*end of team */
+
+
+/* arrow up */
+
+.fa-arrow-up {
+    position: relative;
+    bottom: 0;
+    right: 70%;
+    color: #E52B50;
+    transition: transform .1s;
+}
+
+.fa-arrow-up:hover {
+    transform: scale(1.1)
+}
