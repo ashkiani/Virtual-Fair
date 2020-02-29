@@ -1,215 +1,196 @@
 <div class="container">
   <h1 id="test">testing color - css link - should be red</h1>
   <!-- jumbotron image display -->
-    <div class="container-fluid" id="imageDisplay">
-        <!-- nav starts -->
-        <nav class="navbar">
-            <a href="#">HOME</a>
-            <a href="#">JOB PORTAL</a>
-            <a href="#">APPLICATION PORTAL</a>
-            <a href="#">ADMIN PORTAL</a>
-        </nav>
-        <!-- nav ends -->
+  <div class="container-fluid" id="imageDisplay">
+    <!-- nav starts -->
+    <nav class="navbar">
+      <a href="/">HOME</a>
+      <a href="/job">JOB PORTAL</a>
+      <a href="/status">STATUS PORTAL</a>
+      <a href="/admin">ADMIN PORTAL</a>
+    </nav>
+    <!-- nav ends -->
 
-        <!-- end text title -->
+    <!-- end text title -->
+  </div>
+  <!-- end of container fluid -->
+
+  <!-- container fot job search -->
+  <div class="container-fluid" id="search">
+    <h1 class="display-4">Find your dream job!</h1>
+    <hr class="my-4" />
+    <div class="form-group search-center">
+      <label for="exampleInputEmail1">Job Title:</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
     </div>
-    <!-- end of container fluid -->
-
-    <!-- container fot job search -->
-    <div class="container-fluid" id="search">
-        <h1 class="display-4">Find your dream job!</h1>
-        <hr class="my-4" />
-        <div class="form-group search-center">
-            <label for="exampleInputEmail1">Job Title:</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
-        </div>
-        <div class="form-group search-center">
-            <label for="exampleFormControlSelect1">Location:</label>
-            <select class="form-control" id="exampleFormControlSelect1">
-          <option>DC</option>
-          <option>Virginia</option>
-          <option>Maryland</option>
-          <option>New York</option>
-          <option>California</option>
-        </select>
-        </div>
-        <a class="btn btn-primary btn-lg" href="#target" role="button">Find Jobs</a
-      >
+    <div class="form-group search-center">
+      <label for="exampleFormControlSelect1">Location:</label>
+      <select class="form-control" id="exampleFormControlSelect1">
+        <option>DC</option>
+        <option>Virginia</option>
+        <option>Maryland</option>
+        <option>New York</option>
+        <option>California</option>
+      </select>
     </div>
-    <!-- end of container fot job search -->
+    <a class="btn btn-primary btn-lg" href="#target" role="button">Find Jobs</a>
+  </div>
+  <!-- end of container fot job search -->
 
-    <!-- container search output -->
+  <!-- container search output -->
 
-    <div class="container-fluid skillsCard" id="target">
-      <!-- first row -->
-      <div class="row">
-        <!-- 1.card for skillset -->
-        <div class="col-md-3">
-          <div class="card border-dark mb-3" style="max-width: 18rem;">
-            <div class="card-header">Skill-Set</div>
-            <div class="card-body text-dark">
-              <h5 class="card-title"></h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
-          </div>
-        </div>
-        <!-- 2.card for skillset -->
-        <div class="col-md-3">
-          <div class="card border-dark mb-3" style="max-width: 18rem;">
-            <div class="card-header">Skill-Set</div>
-            <div class="card-body text-dark">
-              <h5 class="card-title"></h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
-          </div>
-        </div>
-        <!-- 3. seacrch output -->
-        <div class="col-md-6">
-          <div class="card">
-            <div class="card-header">
-              Company time
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Job Title</h5>
-              <p class="card-text">
-                With supporting text below as a natural lead-in to additional
-                content.
-              </p>
-
-              <button
-                id="save"
-                type="button"
-                class="btn btn-secondary"
-                data-toggle="tooltip"
-                data-placement="bottom"
-                title="Save"
-              >
-                <i class="fa fa-star"></i>
-              </button>
-            </div>
+  <div class="container-fluid skillsCard" id="target">
+    <!-- first row -->
+    <div class="row">
+      <!-- 1.card for skillset -->
+      <div class="col-md-3">
+        <div class="card border-dark mb-3" style="max-width: 18rem;">
+          <div class="card-header">Skill-Set</div>
+          <div class="card-body text-dark">
+            <h5 class="card-title"></h5>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up
+              the bulk of the card's content.
+            </p>
           </div>
         </div>
       </div>
-      <!--  second row -->
-      <div class="row">
-        <!-- 3.card for skillset -->
-        <div class="col-md-3">
-          <div class="card border-dark mb-3" style="max-width: 18rem;">
-            <div class="card-header">Skill-Set</div>
-            <div class="card-body text-dark">
-              <h5 class="card-title"></h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
-          </div>
-        </div>
-        <!-- 4.card for skillset -->
-        <div class="col-md-3">
-          <div class="card border-dark mb-3" style="max-width: 18rem;">
-            <div class="card-header">Skill-Set</div>
-            <div class="card-body text-dark">
-              <h5 class="card-title"></h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
-          </div>
-        </div>
-        <!-- 2. seacrch output -->
-        <div class="col-md-6">
-          <div class="card">
-            <div class="card-header">
-              Company Name
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Job Title</h5>
-              <p class="card-text">
-                With supporting text below as a natural lead-in to additional
-                content.
-              </p>
-
-              <button
-                id="save"
-                type="button"
-                class="btn btn-secondary"
-                data-toggle="tooltip"
-                data-placement="bottom"
-                title="Save"
-              >
-                <i class="fa fa-star"></i>
-              </button>
-            </div>
+      <!-- 2.card for skillset -->
+      <div class="col-md-3">
+        <div class="card border-dark mb-3" style="max-width: 18rem;">
+          <div class="card-header">Skill-Set</div>
+          <div class="card-body text-dark">
+            <h5 class="card-title"></h5>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up
+              the bulk of the card's content.
+            </p>
           </div>
         </div>
       </div>
-      <!-- end of second row -->
-      <!-- third row -->
-      <div class="row">
-        <!-- 5.card for skillset -->
-        <div class="col-md-3">
-          <div class="card border-dark mb-3" style="max-width: 18rem;">
-            <div class="card-header">Skill-Set</div>
-            <div class="card-body text-dark">
-              <h5 class="card-title"></h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
+      <!-- 3. seacrch output -->
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            Company time
           </div>
-        </div>
-        <!-- 6.card for skillset -->
-        <div class="col-md-3">
-          <div class="card border-dark mb-3" style="max-width: 18rem;">
-            <div class="card-header">Skill-Set</div>
-            <div class="card-body text-dark">
-              <h5 class="card-title"></h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
-          </div>
-        </div>
-        <!-- 3. seacrch output -->
-        <div class="col-md-6">
-          <div class="card">
-            <div class="card-header">
-              Company name
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Job title</h5>
-              <p class="card-text">
-                With supporting text below as a natural lead-in to additional
-                content.
-              </p>
+          <div class="card-body">
+            <h5 class="card-title">Job Title</h5>
+            <p class="card-text">
+              With supporting text below as a natural lead-in to additional
+              content.
+            </p>
 
-              <button
-                id="save"
-                type="button"
-                class="btn btn-secondary"
-                data-toggle="tooltip"
-                data-placement="bottom"
-                title="Save"
-              >
-                <i class="fa fa-star"></i>
-              </button>
-            </div>
+            <button id="save" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom"
+              title="Save">
+              <i class="fa fa-star"></i>
+            </button>
           </div>
         </div>
       </div>
-      <!-- end of third row -->
     </div>
-    <!-- end of container search output -->
+    <!--  second row -->
+    <div class="row">
+      <!-- 3.card for skillset -->
+      <div class="col-md-3">
+        <div class="card border-dark mb-3" style="max-width: 18rem;">
+          <div class="card-header">Skill-Set</div>
+          <div class="card-body text-dark">
+            <h5 class="card-title"></h5>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up
+              the bulk of the card's content.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- 4.card for skillset -->
+      <div class="col-md-3">
+        <div class="card border-dark mb-3" style="max-width: 18rem;">
+          <div class="card-header">Skill-Set</div>
+          <div class="card-body text-dark">
+            <h5 class="card-title"></h5>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up
+              the bulk of the card's content.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- 2. seacrch output -->
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            Company Name
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Job Title</h5>
+            <p class="card-text">
+              With supporting text below as a natural lead-in to additional
+              content.
+            </p>
+
+            <button id="save" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom"
+              title="Save">
+              <i class="fa fa-star"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end of second row -->
+    <!-- third row -->
+    <div class="row">
+      <!-- 5.card for skillset -->
+      <div class="col-md-3">
+        <div class="card border-dark mb-3" style="max-width: 18rem;">
+          <div class="card-header">Skill-Set</div>
+          <div class="card-body text-dark">
+            <h5 class="card-title"></h5>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up
+              the bulk of the card's content.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- 6.card for skillset -->
+      <div class="col-md-3">
+        <div class="card border-dark mb-3" style="max-width: 18rem;">
+          <div class="card-header">Skill-Set</div>
+          <div class="card-body text-dark">
+            <h5 class="card-title"></h5>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up
+              the bulk of the card's content.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- 3. seacrch output -->
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            Company name
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Job title</h5>
+            <p class="card-text">
+              With supporting text below as a natural lead-in to additional
+              content.
+            </p>
+
+            <button id="save" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom"
+              title="Save">
+              <i class="fa fa-star"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end of third row -->
+  </div>
+  <!-- end of container search output -->
 
 </div>
 {{!-- jQuery --}}
