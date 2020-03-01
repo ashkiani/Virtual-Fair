@@ -5,15 +5,15 @@
 
 /* NAV BAR STARTS */
 
-.navbar {
-    margin-top: -50px;
+#indexNavbar {
+    margin-top: -60px;
     width: 100%;
     overflow: auto;
     font-family: 'Coda Caption', sans-serif;
     font-family: 'Nanum Gothic', sans-serif;
 }
 
-.navbar a {
+#indexNavbar a {
     color: #fff;
     border-radius: 8px;
     background-color: background: #CE5937;
@@ -40,7 +40,7 @@
 /* Add responsiveness - on screens less than 500px, make the navigation links appear on top of each other, instead of next to each other */
 
 @media screen and (max-width: 500px) {
-    .navbar a {
+    #indexNavbar a {
         float: none;
         display: block;
         width: 100%;
@@ -56,12 +56,13 @@
 
 /* jumbotron image */
 
-#imageDisplay {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("./images/use.gif");
+#bcgIndex {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("/images/use.gif");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
+    max-width: 100%;
 }
 
 #text {
@@ -78,6 +79,7 @@
 }
 
 #demo {
+    text-align: center;
     border: none;
     outline: none;
     margin-top: 20px;
@@ -105,7 +107,7 @@
 /* sub JUMBOTRON*/
 
 #subJumbotron {
-    margin-top: 150px;
+    margin-top: 120px;
     text-align: center;
     background-color: #fff;
 }
@@ -139,19 +141,53 @@
 /* end of JUMBOTRON */
 
 
+/* bcg pic*/
+
+#bcgPic {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(233, 70, 70, 0.7)), url("/images/Copy-of-Article-Featured-Nov-2019-41-1600x500.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    color: #FFF;
+    border-radius: 10px;
+}
+
+.bcgText {
+    font-family: 'Coda Caption', sans-serif;
+    font-size: 40px;
+    padding: 80px;
+    margin: auto;
+}
+
+
 /* jumbotron 3 */
 
 #jumbotron3 {
     background-color: #515151;
     margin-top: 100px;
     margin-bottom: 200px;
+    border-radius: 10px;
 }
 
-.card-group {
-    text-align: center;
+.box-shadow {
+    -webkit-box-shadow: 5px 5px 15px 5px #000000;
+    box-shadow: 5px 5px 15px 5px #000000;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: -40px;
+    transition: transform .2s;
 }
 
-.card {
+.box-shadow:hover {
+    transform: scale(1.1);
+}
+
+.boxText {
+    font-size: 20px;
+}
+
+.card-display {
     margin: 20px;
     padding: 20px 30px 20px 30px;
     color: background: #CE5937;
@@ -163,6 +199,66 @@
 
 
 /* end of jumbotron 3 */
+
+
+/* team */
+
+#project-team {
+    -webkit-box-shadow: 5px 5px 15px 5px #000000;
+    box-shadow: 5px 5px 15px 5px #000000;
+    width: 98%;
+    border-radius: 10px;
+}
+
+#center {
+    text-align: center;
+    padding: 40px;
+    border-radius: 10px;
+    text-shadow: 1px 0px 1px #CCCCCC, 0px 1px 1px #EEEEEE, 2px 1px 1px #CCCCCC, 1px 2px 1px #EEEEEE, 3px 2px 1px #CCCCCC, 2px 3px 1px #EEEEEE, 4px 3px 1px #CCCCCC, 3px 4px 1px #EEEEEE, 5px 4px 1px #CCCCCC, 4px 5px 1px #EEEEEE, 6px 5px 1px #CCCCCC, 5px 6px 1px #EEEEEE, 7px 6px 1px #CCCCCC, 2px 2px 2px rgba(206, 89, 55, 0);
+}
+
+.siavash {
+    margin: 20px;
+    padding: 20px 30px 20px 30px;
+    color: background: #CE5937;
+    background: -moz-linear-gradient(-45deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
+    background: -webkit-linear-gradient(-45deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
+    background: linear-gradient(135deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
+    color: #fff;
+}
+
+.gene {
+    margin: 20px;
+    padding: 20px 30px 20px 30px;
+    color: background: #CE5937;
+    background: -moz-linear-gradient(-45deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
+    background: -webkit-linear-gradient(-45deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
+    background: linear-gradient(135deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
+    color: #fff;
+}
+
+.niko {
+    margin: 20px;
+    padding: 20px 30px 20px 30px;
+    color: background: #CE5937;
+    background: -moz-linear-gradient(-45deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
+    background: -webkit-linear-gradient(-45deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
+    background: linear-gradient(135deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
+    color: #fff;
+}
+
+.marvin {
+    margin: 20px;
+    padding: 20px 30px 20px 30px;
+    color: background: #CE5937;
+    background: -moz-linear-gradient(-45deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
+    background: -webkit-linear-gradient(-45deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
+    background: linear-gradient(135deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
+    color: #fff;
+}
+
+
+/* end of team */
 
 
 /* jumbotron for text */
@@ -177,7 +273,7 @@
 }
 
 .row {
-    margin-bottom: 200px;
+    margin-bottom: 100px;
 }
 
 #col {
@@ -204,7 +300,7 @@ h2 {
 
 #contact {
     padding: 100px;
-    margin-top: -100px;
+    margin-top: -40px;
     text-align: center;
     background-color: #515151;
     color: #fff;
@@ -292,7 +388,7 @@ textarea {
 /* services */
 
 #vf {
-    margin-top: 150px;
+    margin-top: 120px;
     text-align: center;
 }
 
@@ -301,7 +397,7 @@ textarea {
 }
 
 #row2 {
-    margin-top: -120px;
+    margin-top: -70px;
 }
 
 .col-md-3 {
@@ -393,14 +489,6 @@ iframe {
 
 /* end of modal for demo video */
 
-
-/* meet the team */
-
-.column {
-    margin-bottom: 16px;
-    padding: 0 8px;
-}
-
 @media screen and (max-width: 650px) {
     .column {
         width: 100%;
@@ -411,18 +499,6 @@ iframe {
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     text-align: center;
-}
-
-.container {
-    padding: 0 16px;
-    border-radius: 10px;
-}
-
-.container::after,
-.row::after {
-    content: "";
-    clear: both;
-    display: table;
 }
 
 .title {
@@ -457,14 +533,6 @@ iframe {
     font-family: 'Coda Caption', sans-serif;
     font-family: 'Nanum Gothic', sans-serif;
 }
-
-#squad {
-    margin-top: -120px;
-}
-
-#teamL {}
-
-#teamM {}
 
 
 /*end of team */

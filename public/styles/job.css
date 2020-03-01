@@ -2,8 +2,8 @@
     box-sizing: border-box;
 }
 
-body {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url("./images/job.gif");
+#bcgJobs {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url("/images/job.gif");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -59,29 +59,51 @@ body {
 
 /* container for search */
 
-#search {
-    margin-top: 120px;
+#search-container {
+    margin-top: 160px;
     color: #fff;
     text-align: center;
-}
-
-.display-4 {
     font-family: "Coda Caption", sans-serif;
+    font-family: "Nanum Gothic", sans-serif;
+    text-transform: uppercase;
 }
 
-.search-center {
-    margin: auto;
-    width: 300px;
+.dream-job {
+    font-family: "Coda Caption", sans-serif;
+    letter-spacing: 1.2rem;
+}
+
+#search-Div {
+    margin-top: 35px;
     font-family: "Coda Caption", sans-serif;
     font-family: "Nanum Gothic", sans-serif;
 }
 
-.form-control {
-    text-align: center;
+.form-jobtitle {
+    width: 300px;
+    margin: 0 auto;
     border: 2px solid #e2304d;
+    font-family: "Coda Caption", sans-serif;
+    font-family: "Nanum Gothic", sans-serif;
+    text-transform: uppercase;
 }
 
-.btn {
+#search-form {
+    margin-top: 60px;
+}
+
+.form-jobsearch {
+    margin: 0 auto;
+    border: 2px solid #e2304d;
+    width: 300px;
+    font-family: "Coda Caption", sans-serif;
+    font-family: "Nanum Gothic", sans-serif;
+    text-transform: uppercase;
+}
+
+#search-button {
+    font-size: 16px;
+    margin-bottom: 50px;
     background: #ce5937;
     background: -moz-linear-gradient( -45deg, #ce5937 0%, #e52b50 50%, #c59237 100%);
     background: -webkit-linear-gradient( -45deg, #ce5937 0%, #e52b50 50%, #c59237 100%);
@@ -92,7 +114,7 @@ body {
     border: 1px solid #e2304d;
 }
 
-.btn:hover {
+#serach-button:hover {
     transform: scale(1.1);
     border: 1px solid #e2304d;
 }
@@ -101,27 +123,52 @@ body {
 /* end of container for search */
 
 
+/* search title */
+
+.result-title {
+    font-size: 55px;
+    border-radius: 10px;
+    text-shadow: 1px 0px 1px #cccccc, 0px 1px 1px #eeeeee, 2px 1px 1px #cccccc, 1px 2px 1px #eeeeee, 3px 2px 1px #cccccc, 2px 3px 1px #eeeeee, 4px 3px 1px #cccccc, 3px 4px 1px #eeeeee, 5px 4px 1px #cccccc, 4px 5px 1px #eeeeee, 6px 5px 1px #cccccc, 5px 6px 1px #eeeeee, 7px 6px 1px #cccccc, 2px 2px 2px rgba(206, 89, 55, 0);
+    text-align: center;
+    margin-top: 100px;
+    padding: 50px;
+    border-radius: 8px;
+    background-color: #ce5937;
+    background: -moz-linear-gradient( -45deg, #ce5937 0%, #e52b50 50%, #c59237 100%);
+    background: -webkit-linear-gradient( -45deg, #ce5937 0%, #e52b50 50%, #c59237 100%);
+    background: linear-gradient(135deg, #ce5937 0%, #e52b50 50%, #c59237 100%);
+    font-family: "Coda Caption", sans-serif;
+}
+
+
+/* end of search title */
+
+
 /* jobs by skillset */
 
-.skillsTitle {
+#skill-set {
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+.card-deck {
+    width: 98%;
+    margin: 15px 0px 15px 15px;
+}
+
+.skill-card {
+    border-radius: 8px;
+    background-color: #515151;
     color: #fff;
-    position: relative;
-    left: 14%;
+    border: 4px solid #dc4749;
 }
 
-.skillsCard {
-    margin-top: 120px;
-}
-
-
-/* end of jobs for skillset*/
-
-
-/* job */
-
-.card {
-    margin-top: 15px;
+.job-card {
+    border-radius: 8px;
+    background-color: #515151;
+    color: #fff;
+    border: 4px solid #dc4749;
 }
 
 
-/* end of job */
+/* end of jobs by skillset*/
