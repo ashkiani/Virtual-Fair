@@ -1,23 +1,24 @@
-module.exports = function(sequelize, DataTypes) {
-    var UserTypes = sequelize.define("tblUsersTypes", {
-      
+module.exports = function (sequelize, DataTypes) {
+    var UsersTypes = sequelize.define("UsersTypes", {
+       
     });
 
-    var Users = sequelize.define("tblUsers", {
-      firstname: DataTypes.STRING,
-      lastname: DataTypes.STRING,
-      username: DataTypes.STRING,
-      password: DataTypes.STRING
-    });
+    UsersTypes.associate = function (models) {
+        UsersTypes.belongsTo(models.Users, {
+            foreignKey: {
+                allowNull: false
+            }
+        });
+    };
 
-    var UserType = sequelize.define("tblUserType", {
-      type: DataTypes.STRING
-    });
+    UsersTypes.associate = function (models) {
+        UsersTypes.belongsTo(models.UserTypes, {
+            foreignKey: {
+                allowNull: false
+            }
+        });
+    };
 
-    // Adding user_ID and type_ID to tblUsersTypes
-    Users.hasMany(UserTypes, {foreignKey: 'user_id', onDelete: "cascade"});
-    UserType.hasMany(UserTypes, {foreignKey: 'type_id', onDelete: "cascade"});
-    
-    return UserTypes;
-  };
-  
+
+    return UsersTypes;
+};

@@ -1,15 +1,34 @@
 module.exports = function (sequelize, DataTypes) {
-  var Jobs = sequelize.define("tblJobs", {
-    title: DataTypes.STRING,
-    description: DataTypes.STRING
-  });
+    var Jobs = sequelize.define("Jobs", {
+        title: DataTypes.STRING,
+        description: DataTypes.TEXT
+    });
 
-  var Locations = sequelize.define("tblLocations", {
-    location: DataTypes.STRING
-  });
+    Jobs.associate = function(models) {
+        Jobs.hasMany(models.JobSkills, {
+          onDelete: "cascade"
+        });
+      };
 
-  // Adding location_id to tblJobs
-  Locations.hasMany(Jobs, {foreignKey: 'location_id', onDelete: "cascade"});
-  return Jobs;
-  
+      Jobs.associate = function(models) {
+        Jobs.hasMany(models.JobRequirements, {
+          onDelete: "cascade"
+        });
+      };
+
+      Jobs.associate = function (models) {
+        Jobs.hasMany(models.Applications, {
+            onDelete: "cascade"
+        });
+    };
+
+    Jobs.associate = function (models) {
+        Jobs.belongsTo(models.Locations, {
+            foreignKey: {
+                allowNull: false
+            }
+        });
+    };
+
+    return Jobs;
 };

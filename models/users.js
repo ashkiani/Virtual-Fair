@@ -1,10 +1,28 @@
-module.exports = function(sequelize, DataTypes) {
-    var Users = sequelize.define("tblUsers", {
-      firstname: DataTypes.STRING,
-      lastname: DataTypes.STRING,
-      username: DataTypes.STRING,
-      password: DataTypes.STRING
+module.exports = function (sequelize, DataTypes) {
+    var Users = sequelize.define("Users", {
+        firstname: DataTypes.STRING,
+        lastname: DataTypes.STRING,
+        username: DataTypes.STRING,
+        password: DataTypes.STRING
     });
+
+    Users.associate = function (models) {
+        Users.hasMany(models.Applications, {
+            onDelete: "cascade"
+        });
+    };
+
+    Users.associate = function (models) {
+        Users.hasMany(models.AdminActions, {
+            onDelete: "cascade"
+        });
+    };
+
+    Users.associate = function (models) {
+        Users.hasMany(models.UsersTypes, {
+            onDelete: "cascade"
+        });
+    };
+
     return Users;
-  };
-  
+};
