@@ -2,19 +2,19 @@
     box-sizing: border-box;
 }
 
-#bckgAdmin {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url("");
+#bcgAdmin {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url("/images/future.gif");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
+    height: 800px;
 }
 
 
 /* NAV BAR STARTS */
 
 #navbarAdmin {
-    margin-top: 55px;
     width: 100%;
     overflow: auto;
     font-family: 'Coda Caption', sans-serif;

@@ -1,134 +1,153 @@
-<div class="container-fluid" id="changes">
-    <!-- jumbotron image display -->
-    <div class="container-fluid" id="imageDisplay">
-        <!-- nav starts -->
-        <nav class="navbar">
-            <a href="/">HOME</a>
-            <a href="/jobs">JOB PORTAL</a>
-            <a href="/status">STATUS PORTAL</a>
-            <a href="/admin">ADMIN PORTAL</a>
-        </nav>
-        <!-- nav ends -->
-        <!-- text for title -->
-        <h1 class="display-4" id="text">
+<!-- jumbotron image display -->
+<div class="container-fluid" id="bcgStatus">
+    <!-- nav starts -->
+    <nav class="navbar">
+        <a href="/">HOME</a>
+        <a href="/jobs">JOB PORTAL</a>
+        <a href="/status">STATUS PORTAL</a>
+        <a href="/admin">ADMIN PORTAL</a>
+    </nav>
+    <!-- nav ends -->
+    <!-- text for title -->
+    <div class="container-fluid" id="text-status">
+        <h1 class="display-4">
             Welcome to your application status page
         </h1>
-        <p class="lead alt" id="textSub">
-            View all jobs, current status of the applciation, option to remove/accept job offer, save your favorite
-            jobs!
-        </p>
-        <!-- end text title -->
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <a href="#adjust">
+        <button class="blink_me btn"><i class="fas fa-arrow-down fa-2x"></i></button>
+    </a>
+    <br>
+    <br>
+    <br>
+    <br>
+    <!-- end text title -->
+</div>
+<!-- end of bcg video -->
 
-
-        <!-- start of job title -->
-        <div class="container-fluid text-center style jobTitle">
-            <div class="row" id="position">
-                <div class="col-md-6">
-                    <h1>Job Description</h1>
-                </div>
-
-                <div class="col-md-3">
-                    <h1>Status</h1>
-                </div>
-                <div class="col-md-3">
-                    <h1>Action</h1>
-                </div>
+<!-- first row -->
+<div class="row" id="adjust">
+    <div class="col-sm">
+        <div class="card" id="appl-card">
+            <div class="card-body">
+                <h5 class="card-title" id="jobOutput">Job Title</h5>
+                <hr id="hr">
+                <h6 id="location-output">Location</h6>
+                <hr id="hr">
+                <p class="card-text" id="desc-output">With supporting text below as a natural lead-in to
+                    additional content.</p>
+                <!-- remove button -->
+                <button type="button" id="remove-application" class="btn btn-secondary" data-toggle="tooltip"
+                    data-placement="bottom" title="Remove">
+                    <i class="far fa-trash-alt"></i>
+                </button>
             </div>
-        </div>
-
-        <!-- end of job title -->
-
-        <!-- start of job description,action container -->
-        <div class="container-fluid style2">
-            <div class="row" id="position">
-                <div class="col-md-6 top">
-                    <p class="textDesc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima architecto
-                        iusto, dolores officia ea explicabo. Voluptatibus ipsam fugit, dignissimos ratione quos ducimus
-                        in quaerat quod nisi sint dolorum, ullam temporibus?
-                    </p>
-                </div>
-                <div class="col-md-3 status">
-                    <h3 class="statusDesc">Status</h3>
-                </div>
-                <div class="col-md-3 icons">
-                    <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top"
-                        title="View job"><i class="fa fa-eye fa-2x"></i></button></i>
-                    </i><button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top"
-                        title="Save job"><i class="fa fa-save fa-2x"></button></i>
-
-                    <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top"
-                        title="Delete job"><i class="fa fa-trash fa-2x"></i></button></i>
-                </div>
-            </div>
-            <!-- second job -->
-            <div class="row" id="position">
-                <div class="col-md-6 top">
-                    <p class="textDesc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima architecto
-                        iusto, dolores officia ea explicabo. Voluptatibus ipsam fugit, dignissimos ratione quos ducimus
-                        in quaerat quod nisi sint dolorum, ullam temporibus?
-                    </p>
-                </div>
-                <div class="col-md-3 status">
-                    <h3 class="statusDesc">Status</h3>
-                </div>
-                <div class="col-md-3 icons">
-                    <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top"
-                        title="View job"><i class="fa fa-eye fa-2x"></i></button></i>
-                    </i><button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top"
-                        title="Save job"><i class="fa fa-save fa-2x"></button></i>
-
-                    <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top"
-                        title="Delete job"><i class="fa fa-trash fa-2x"></i></button></i>
-                </div>
-            </div>
-            <!-- end of second job -->
-            <!-- third job -->
-            <div class="row" id="position">
-                <div class="col-md-6 top">
-                    <p class="textDesc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima architecto
-                        iusto, dolores officia ea explicabo. Voluptatibus ipsam fugit, dignissimos ratione quos ducimus
-                        in quaerat quod nisi sint dolorum, ullam temporibus?
-                    </p>
-                </div>
-                <div class="col-md-3 status">
-                    <h3 class="statusDesc">Status</h3>
-                </div>
-                <div class="col-md-3 icons">
-                    <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top"
-                        title="View job"><i class="fa fa-eye fa-2x"></i></button></i>
-                    </i><button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top"
-                        title="Save job"><i class="fa fa-save fa-2x"></button></i>
-
-                    <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top"
-                        title="Delete job"><i class="fa fa-trash fa-2x"></i></button></i>
-                </div>
-            </div>
-            <!-- end of third job -->
-            <!-- fourth job -->
-            <div class="row" id="position">
-                <div class="col-md-6 top">
-                    <p class="textDesc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima architecto
-                        iusto, dolores officia ea explicabo. Voluptatibus ipsam fugit, dignissimos ratione quos ducimus
-                        in quaerat quod nisi sint dolorum, ullam temporibus?
-                    </p>
-                </div>
-                <div class="col-md-3 status">
-                    <h3 class="statusDesc">Status</h3>
-                </div>
-                <div class="col-md-3 icons">
-                    <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top"
-                        title="View job"><i class="fa fa-eye fa-2x"></i></button></i>
-                    </i><button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top"
-                        title="Save job"><i class="fa fa-save fa-2x"></button></i>
-
-                    <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top"
-                        title="Delete job"><i class="fa fa-trash fa-2x"></i></button></i>
-                </div>
-            </div>
-            <!-- end of the fourth job -->
         </div>
     </div>
-    <!-- end of job description,action container -->
-    <!-- js link -->
 
+    <div class="col-sm">
+        <div class="card" id="appl-card">
+            <div class="card-body">
+                <h5 class="card-title" id="jobOutput">Job title</h5>
+                <hr id="hr">
+                <h6 id="location-output">Location</h6>
+                <hr id="hr">
+                <p class="card-text" id="desc-output">With supporting text below as a natural lead-in to
+                    additional content.</p>
+                <!-- remove button -->
+                <button type="button" id="remove-application" class="btn btn-secondary" data-toggle="tooltip"
+                    data-placement="bottom" title="Remove">
+                    <i class="far fa-trash-alt"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- end of first row -->
+
+<!-- second row -->
+<div class="row" id="adjust">
+    <div class="col-sm">
+        <div class="card" id="appl-card">
+            <div class="card-body">
+                <h5 class="card-title" id="jobOutput">Job title</h5>
+                <hr id="hr">
+                <h6 id="location-output">Location</h6>
+                <hr id="hr">
+                <p class="card-text" id="desc-output">With supporting text below as a natural lead-in to
+                    additional content.</p>
+                <!-- remove button -->
+                <button type="button" id="remove-application" class="btn btn-secondary" data-toggle="tooltip"
+                    data-placement="bottom" title="Remove">
+                    <i class="far fa-trash-alt"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm">
+        <div class="card" id="appl-card">
+            <div class="card-body">
+                <h5 class="card-title" id="jobOutput">Job title</h5>
+                <hr id="hr">
+                <h6 id="location-output">Location</h6>
+                <hr id="hr">
+                <p class="card-text" id="desc-output">With supporting text below as a natural lead-in to
+                    additional content.</p>
+                <!-- remove button -->
+                <button type="button" id="remove-application" class="btn btn-secondary" data-toggle="tooltip"
+                    data-placement="bottom" title="Remove">
+                    <i class="far fa-trash-alt"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end of second row -->
+
+<!-- third row -->
+<div class="row" id="adjust">
+    <div class="col-sm">
+        <div class="card" id="appl-card">
+            <div class="card-body">
+                <h5 class="card-title" id="jobOutput">Job title</h5>
+                <hr id="hr">
+                <h6 id="location-output">Location</h6>
+                <hr id="hr">
+                <p class="card-text" id="desc-output">With supporting text below as a natural lead-in to
+                    additional content.</p>
+                <!-- remove button -->
+                <button type="button" id="remove-application" class="btn btn-secondary" data-toggle="tooltip"
+                    data-placement="bottom" title="Remove">
+                    <i class="far fa-trash-alt"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm">
+        <div class="card" id="appl-card">
+            <div class="card-body">
+                <h5 class="card-title" id="jobOutput">Job title</h5>
+                <hr id="hr">
+                <h6 id="location-output">Location</h6>
+                <hr id="hr">
+                <p class="card-text" id="desc-output">With supporting text below as a natural lead-in to
+                    additional content.</p>
+                <!-- remove button -->
+                <button type="button" id="remove-application" class="btn btn-secondary" data-toggle="tooltip"
+                    data-placement="bottom" title="Remove">
+                    <i class="far fa-trash-alt"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end of third row -->
 </div>
