@@ -16,16 +16,10 @@
   <!-- container fot job search -->
   <div class="container-fluid" id="search-container">
 
-    <h1 class="display-4">Find your dream job!</h1>
-
-    <div class="form-group" id="search-Div">
-
-      <label for="exampleInputEmail1">Job Title:</label>
-      <input type="email" class="form-control form-jobtitle" id="exampleInputEmail1" aria-describedby="emailHelp" />
-    </div>
+    <h1 class="display-4 dream-job">Find your dream job!</h1>
 
     <div class="form-group" id="search-form">
-      <label for="exampleFormControlSelect1">Location:</label>
+      <label for="exampleFormControlSelect1">Location</label>
       <select class="form-control form-jobsearch" id="exampleFormControlSelect1">
         <option>DC</option>
         <option>Virginia</option>
@@ -34,40 +28,57 @@
         <option>California</option>
       </select>
     </div>
-    <a class="btn btn-primary btn-lg" id="serach-button" href="#target" role="button">Find Jobs</a>
-  </div>
+    <div class="form-group" id="search-Div">
 
+      <label for="exampleInputEmail1">Job Title</label>
+      <input type="email" class="form-control form-jobtitle" id="exampleInputEmail1" aria-describedby="emailHelp" />
+    </div>
+
+    <a href="#openModal"><button type="button" class="btn btn-primary" id="search-button">
+        <span> <i class="fas fa-search"></i> </span> Find Job
+      </button></a>
+  </div>
   <!-- end of container for job search form -->
 </div>
 <!-- end of nav,jumbotron-fluid,video display -->
+
+<div class="container result-title">
+  <h1 class="res-title">Your Search result</h1>
+</div>
 
 <!-- skill-set container -->
 <div class="container-fluid" id="skill-set">
   <!-- first row -->
   <div class="card-deck">
     <!-- skill-set 1 -->
-    <div class="card">
+    <div class="card skill-card">
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
+        <h5 class="card-title">Skill-set title</h5>
+        <hr style="background-color: #DC4749">
         <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
           content.
           This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+
       </div>
     </div>
-    <div class="card">
+    <div class="card skill-card">
       <!-- skill-set 2 -->
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
+        <h5 class="card-title">Skill-set title</h5>
+        <hr style="background-color: #DC4749">
+
         <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+
       </div>
     </div>
     <!-- job serach output -->
-    <div class="card">
-      <h5 class="card-header">Featured</h5>
+    <div class="card job-card">
+      <h5 class="card-header" style="border-bottom: 1px solid #fff;">Company</h5>
+
       <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
+        <h5 class="card-title">Job Title</h5>
+        <hr style="background-color: #DC4749">
+
         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
         <a href="#" class="btn btn-primary">Go somewhere</a>
       </div>
@@ -78,28 +89,36 @@
   <!-- second row -->
   <div class="card-deck">
     <!-- skill-set 3 -->
-    <div class="card">
+    <div class="card skill-card">
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
+        <h5 class="card-title">Skill-set title</h5>
+        <hr style="background-color: #DC4749">
+
         <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
           content.
           This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+
       </div>
     </div>
-    <div class="card">
+    <div class="card skill-card">
       <!-- skill-set 4 -->
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
+        <h5 class="card-title">Skill-set title</h5>
+        <hr style="background-color: #DC4749">
+
         <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+
       </div>
     </div>
     <!-- job serach output 2-->
-    <div class="card">
-      <h5 class="card-header">Featured</h5>
+    <div class="card job-card">
+      <h5 class="card-header" style="border-bottom: 1px solid #fff;">Company </h5>
+
+
       <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
+        <h5 class="card-title">Job Title</h5>
+        <hr style="background-color: #DC4749">
+
         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
         <a href="#" class="btn btn-primary">Go somewhere</a>
       </div>
@@ -111,28 +130,35 @@
   <!-- third row -->
   <div class="card-deck">
     <!-- skill-set 5 -->
-    <div class="card">
+    <div class="card skill-card">
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
+        <h5 class="card-title">Skill-set title</h5>
+        <hr style="background-color: #DC4749">
+
         <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
           content.
           This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+
       </div>
     </div>
-    <div class="card">
+    <div class="card skill-card">
       <!-- skill-set 6 -->
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
+        <h5 class="card-title">Skill-set title</h5>
+        <hr style="background-color: #DC4749">
+
         <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+
       </div>
     </div>
     <!-- job serach output  3-->
-    <div class="card">
-      <h5 class="card-header">Featured</h5>
+    <div class="card job-card">
+      <h5 class="card-header" style="border-bottom: 1px solid #fff;">Company</h5>
+
       <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
+        <h5 class="card-title">Job Title</h5>
+        <hr style="background-color: #DC4749">
+
         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
         <a href="#" class="btn btn-primary">Go somewhere</a>
       </div>
