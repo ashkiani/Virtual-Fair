@@ -2,8 +2,8 @@
     box-sizing: border-box;
 }
 
-body {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url("./images/future.gif");
+#bckgAdmin {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url("");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -13,14 +13,15 @@ body {
 
 /* NAV BAR STARTS */
 
-.navbar {
+#navbarAdmin {
+    margin-top: 55px;
     width: 100%;
     overflow: auto;
     font-family: 'Coda Caption', sans-serif;
     font-family: 'Nanum Gothic', sans-serif;
 }
 
-.navbar a {
+#navbarAdmin a {
     color: #fff;
     border-radius: 8px;
     background-color: background: #CE5937;

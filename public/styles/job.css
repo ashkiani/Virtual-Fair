@@ -2,8 +2,8 @@
     box-sizing: border-box;
 }
 
-body {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url("./images/job.gif");
+#bcgJobs {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url("");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -59,9 +59,10 @@ body {
 
 /* container for search */
 
-#search {
-    margin-top: 120px;
+#search-container {
+    margin-top: 150px;
     color: #fff;
+    border: 1px solid black;
     text-align: center;
 }
 
@@ -69,19 +70,30 @@ body {
     font-family: "Coda Caption", sans-serif;
 }
 
-.search-center {
-    margin: auto;
-    width: 300px;
+#search-Div {
+    margin-top: 60px;
     font-family: "Coda Caption", sans-serif;
     font-family: "Nanum Gothic", sans-serif;
 }
 
-.form-control {
-    text-align: center;
+.form-jobtitle {
+    width: 300px;
+    margin: 0 auto;
     border: 2px solid #e2304d;
 }
 
-.btn {
+#search-form {
+    margin-top: 20px;
+}
+
+.form-jobsearch {
+    margin: 0 auto;
+    border: 2px solid #e2304d;
+    width: 300px;
+}
+
+#serach-button {
+    margin-bottom: 30px;
     background: #ce5937;
     background: -moz-linear-gradient( -45deg, #ce5937 0%, #e52b50 50%, #c59237 100%);
     background: -webkit-linear-gradient( -45deg, #ce5937 0%, #e52b50 50%, #c59237 100%);
@@ -92,7 +104,7 @@ body {
     border: 1px solid #e2304d;
 }
 
-.btn:hover {
+#serach-button:hover {
     transform: scale(1.1);
     border: 1px solid #e2304d;
 }
@@ -103,25 +115,9 @@ body {
 
 /* jobs by skillset */
 
-.skillsTitle {
-    color: #fff;
-    position: relative;
-    left: 14%;
-}
-
-.skillsCard {
-    margin-top: 120px;
+#skill-set {
+    border: 5px solid black;
 }
 
 
-/* end of jobs for skillset*/
-
-
-/* job */
-
-.card {
-    margin-top: 15px;
-}
-
-
-/* end of job */
+/* end of jobs by skillset*/
