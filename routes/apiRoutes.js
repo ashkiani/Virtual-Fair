@@ -16,8 +16,8 @@ jobs.push({
 module.exports = function(app) {
   app.get("/api/jobs", async (req, res) => {
     try {
-      console.log("api get received at /api/jobs");
-      res.json(jobs);
+      console.log("api get received at /api/jobs", jobs);
+      res.render("jobs",{jobResult: jobs});
       //jobs
       // console.log(db.tblJobs);
       // db.tblJobs.findAll({}).then(allJobs => {

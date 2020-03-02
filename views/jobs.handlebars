@@ -25,11 +25,15 @@
     <div class="form-group" id="search-form">
       <label for="exampleFormControlSelect1">Location</label>
       <select class="form-control form-jobsearch" id="exampleFormControlSelect1">
-        <option>DC</option>
+        {{!-- handlebars for location --}}
+        {{#each locations}}
+          <option>{{location}}</option>
+        {{/each}}
+        {{!-- <option>DC</option>
         <option>Virginia</option>
         <option>Maryland</option>
         <option>New York</option>
-        <option>California</option>
+        <option>California</option> --}}
       </select>
     </div>
     <div class="form-group" id="search-Div">
@@ -38,9 +42,9 @@
       <input type="email" class="form-control form-jobtitle" id="exampleInputEmail1" aria-describedby="emailHelp" />
     </div>
 
-    <a href="#skill-set"><button type="button" class="btn btn-primary" id="search-button">
+    <button type="button" class="btn btn-primary" id="search-button">
         <span> <i class="fas fa-search"></i> </span> Find Job
-      </button></a>
+      </button>
   </div>
   <!-- end of container for job search form -->
 </div>
@@ -58,14 +62,13 @@
   <!-- first row -->
   <div class="card-deck">
     <!-- skill-set 1 -->
+    {{#each skills}}
     <div class="card skill-card">
       <div class="card-body">
 
-        <h5 class="card-title">Skill-set title</h5>
+        <h5 class="card-title">{{skillTitle}}</h5>
         <hr style="background-color: #DC4749">
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-          content.
-          This content is a little bit longer.</p>
+        <p class="card-text">{{description}}</p>
         <!-- view skill-set -->
         <button type="button" id="view-skillset" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom"
           title="View Jobs">
@@ -73,7 +76,9 @@
         </button>
       </div>
     </div>
-    <div class="card skill-card">
+    {{/each}}
+
+    {{!-- <div class="card skill-card">
       <!-- skill-set 2 -->
       <div class="card-body">
         <h5 class="card-title">Skill-set title</h5>
@@ -86,16 +91,17 @@
           <i class="fas fa-eye fa-1x"></i>
         </button>
       </div>
-    </div>
+    </div> --}}
+    {{#each jobResult}}
     <!-- job serach output -->
     <div class="card job-card">
-      <h5 class="card-header" style="border-bottom: 1px solid #fff;">Job Title</h5>
+      <h5 class="card-header" style="border-bottom: 1px solid #fff;">{{jobTitle}}</h5>
 
       <div class="card-body">
-        <h5 class="card-title">Location</h5>
+        <h5 class="card-title">{{location}}</h5>
         <hr style="background-color: #DC4749">
 
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <p class="card-text">{{jobSkills}}{{jobRequirements}}</p>
         <!-- apply btn -->
         <button type="button" id="applyJob" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom"
           title="Apply">
@@ -108,10 +114,11 @@
         </button>
       </div>
     </div>
+    {{/each}}
   </div>
   <!-- end of first row -->
 
-  <!-- second row -->
+  {{!-- <!-- second row -->
   <div class="card-deck">
     <!-- skill-set 3 -->
     <div class="card skill-card">
@@ -230,10 +237,14 @@
     </div>
   </div>
   <!-- end of third row -->
-</div>
+</div> --}}
 <!-- end of skill-set container -->
 
-
-
 {{!-- jQuery --}}
-{{!-- javascript --}}
+   <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+  {{!-- javascript --}}
+  <script src="/js/job.js" type="text/javascript"></script>
+
