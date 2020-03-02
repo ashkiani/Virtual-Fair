@@ -70,6 +70,10 @@
     animation: blinker 1s linear infinite;
     color: #fff;
     border-radius: 80%;
+    background-color: background: #CE5937;
+    background: -moz-linear-gradient(-45deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
+    background: -webkit-linear-gradient(-45deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
+    background: linear-gradient(135deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
 }
 
 @keyframes blinker {
@@ -77,6 +81,8 @@
         opacity: 0;
     }
 }
+
+.fa-arrow-down {}
 
 
 /* end of page title */
@@ -119,12 +125,6 @@
 }
 
 #adjust {
-    border-radius: 8px;
-    background-color: background: #CE5937;
-    background: -moz-linear-gradient(-45deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
-    background: -webkit-linear-gradient(-45deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
-    background: linear-gradient(135deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
-    padding: 40px;
     margin: 20px;
 }
 
