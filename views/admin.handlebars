@@ -1,4 +1,4 @@
-<div class="container-fluid" id="bckgAdmin">
+<div class="container-fluid" id="bcgAdmin">
     <!-- jumbotron image display -->
     <div class="container-fluid">
         <!-- nav starts -->
@@ -11,116 +11,155 @@
     </div>
     <!-- end of nav -->
 
-    <div class="container-fluid text-center style jobTitle">
-        <div class="row" id="position">
-            <div class="col-md-6">
-                <h1>Applicant Name</h1>
+    <h1 class="display-4" id="admin-title">
+        Welcome, name !
+    </h1>
+
+
+    <!-- admin card container -->
+    <div class="container-fluid" id="admin-container">
+        <!-- first row -->
+        <div class="row">
+            <div class="col-sm" id="admin-col">
+                <div class="card" id="admin-card">
+                    <div class="card-header" id="adminJob-title">
+                        Job Title
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title" id="admin-skill">Skill</h5>
+                        <p class="card-text" id="admin-jobDescription">Job Description</p>
+
+                    </div>
+
+                    <!-- end of admin notes -->
+                    <div class="card-footer text-muted">
+                        <!-- btn schedule -->
+                        <button type="button" class="btn btn-secondary" id="scheduleBtn" data-toggle="tooltip"
+                            data-placement="bottom" title="Schedule">
+                            Schedule
+                        </button>
+                        <!-- btn not qualified -->
+                        <button type="button" class="btn btn-secondary" id="qualifiedBtn" data-toggle="tooltip"
+                            data-placement="bottom" title="Not Qualified">
+                            Not qualified
+                        </button>
+                        <!-- btn  Interviewed -->
+                        <button type="button" class="btn btn-secondary" id="InterviewedBtn" data-toggle="tooltip"
+                            data-placement="bottom" title="Interviewed">
+                            Interviewed
+                        </button>
+                        <!-- Offer job btn -->
+                        <button type="button" class="btn btn-secondary" id="offerBtn" data-toggle="tooltip"
+                            data-placement="bottom" title="Offer the Job">
+                            Offer the Job
+                        </button>
+                    </div>
+                </div>
             </div>
 
-            <div class="col-md-3">
-                <h1>Position</h1>
-            </div>
-            <div class="col-md-3">
-                <h1>Action</h1>
+            <div class="col-sm" id="admin-col">
+                <div class="form-group" id="admin-txt">
+                    <textarea class="form-control" placeholder="Save Your Notes" id="exampleFormControlTextarea1"
+                        rows="8"></textarea>
+                </div>
             </div>
         </div>
-    </div>
+        <!-- end of first row -->
 
+        <!-- second row -->
+        <div class="row">
+            <div class="col-sm" id="admin-col">
+                <div class="card" id="admin-card">
+                    <div class="card-header" id="adminJob-title">
+                        Job Title
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title" id="admin-skill">Skill</h5>
+                        <p class="card-text" id="admin-jobDescription">Job Description</p>
+                    </div>
 
-    <!-- start of job description,action container -->
-    <div class="container-fluid style2">
-        <div class="row" id="position">
-            <div class="col-md-6 top">
-                <h3 class="statusDesc">Niko Jovanovic</h3>
+                    <div class="card-footer text-muted">
+                        <!-- btn schedule -->
+                        <button type="button" class="btn btn-secondary" id="scheduleBtn" data-toggle="tooltip"
+                            data-placement="bottom" title="Schedule">
+                            Schedule
+                        </button>
+                        <!-- btn not qualified -->
+                        <button type="button" class="btn btn-secondary" id="qualifiedBtn" data-toggle="tooltip"
+                            data-placement="bottom" title="Not Qualified">
+                            Not qualified
+                        </button>
+                        <!-- btn  Interviewed -->
+                        <button type="button" class="btn btn-secondary" id="InterviewedBtn" data-toggle="tooltip"
+                            data-placement="bottom" title="Interviewed">
+                            Interviewed
+                        </button>
+                        <!-- Offer job btn -->
+                        <button type="button" class="btn btn-secondary" id="offerBtn" data-toggle="tooltip"
+                            data-placement="bottom" title="Offer the Job">
+                            Offer the Job
+                        </button>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-3 status">
-                <h3 class="statusDesc">Junior Developer</h3>
-            </div>
-            <div class="col-md-3 icons">
-                <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top"
-                    title="View job"><i class="fa fa-eye fa-2x"></i></button></i>
-                </i><button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top"
-                    title="Save job"><i class="fa fa-save fa-2x"></button></i>
 
-                <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top"
-                    title="Delete job"><i class="fa fa-trash fa-2x"></i></button></i>
+            <div class="col-sm" id="admin-col">
+                <div class="form-group" id="admin-txt">
+
+                    <textarea class="form-control" placeholder="Save Your Notes" id="exampleFormControlTextarea1"
+                        rows="8"></textarea>
+                </div>
             </div>
         </div>
-        <!-- second job -->
-        <div class="row" id="position">
-            <div class="col-md-6 top">
-                <h3 class="statusDesc">Siavash Ashkiani</h3>
-            </div>
-            <div class="col-md-3 status">
-                <h3 class="statusDesc">Senior Developer</h3>
-            </div>
-            <div class="col-md-3 icons">
-                <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top"
-                    title="View job"><i class="fa fa-eye fa-2x"></i></button></i>
-                </i><button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top"
-                    title="Save job"><i class="fa fa-save fa-2x"></button></i>
+        <!-- end of second row -->
 
-                <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top"
-                    title="Delete job"><i class="fa fa-trash fa-2x"></i></button></i>
+        <!-- third row -->
+        <div class="row">
+            <div class="col-sm" id="admin-col">
+                <div class="card" id="admin-card">
+                    <div class="card-header" id="adminJob-title">
+                        Job Title
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title" id="admin-skill">Skill</h5>
+                        <p class="card-text" id="admin-jobDescription">Job Description</p>
+
+                    </div>
+
+                    <!-- end of admin notes -->
+                    <div class="card-footer text-muted">
+                        <!-- btn schedule -->
+                        <button type="button" class="btn btn-secondary" id="scheduleBtn" data-toggle="tooltip"
+                            data-placement="bottom" title="Schedule">
+                            Schedule
+                        </button>
+                        <!-- btn not qualified -->
+                        <button type="button" class="btn btn-secondary" id="qualifiedBtn" data-toggle="tooltip"
+                            data-placement="bottom" title="Not Qualified">
+                            Not qualified
+                        </button>
+                        <!-- btn  Interviewed -->
+                        <button type="button" class="btn btn-secondary" id="InterviewedBtn" data-toggle="tooltip"
+                            data-placement="bottom" title="Interviewed">
+                            Interviewed
+                        </button>
+                        <!-- Offer job btn -->
+                        <button type="button" class="btn btn-secondary" id="offerBtn" data-toggle="tooltip"
+                            data-placement="bottom" title="Offer the Job">
+                            Offer the Job
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm" id="admin-col">
+                <div class="form-group" id="admin-txt">
+                    <textarea class="form-control" placeholder="Save Your Notes" id="exampleFormControlTextarea1"
+                        rows="8"></textarea>
+                </div>
             </div>
         </div>
-        <!-- end of second job -->
-        <!-- third job -->
-        <div class="row" id="position">
-            <div class="col-md-6 top">
-                <h3 class="statusDesc">Gene Edwards</h3>
-            </div>
-            <div class="col-md-3 status">
-                <h3 class="statusDesc">Senior Developer</h3>
-            </div>
-            <div class="col-md-3 icons">
-                <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top"
-                    title="View job"><i class="fa fa-eye fa-2x"></i></button></i>
-                </i><button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top"
-                    title="Save job"><i class="fa fa-save fa-2x"></button></i>
-
-                <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top"
-                    title="Delete job"><i class="fa fa-trash fa-2x"></i></button></i>
-            </div>
-        </div>
-        <!-- end of third job -->
-        <!-- fourth job -->
-        <div class="row" id="position">
-            <div class="col-md-6 top">
-                <h3 class="statusDesc">Lusio Filiba</h3>
-            </div>
-            <div class="col-md-3 status">
-                <h3 class="statusDesc">Full Stack Developer</h3>
-            </div>
-            <div class="col-md-3 icons">
-                <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top"
-                    title="View job"><i class="fa fa-eye fa-2x"></i></button></i>
-                </i><button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top"
-                    title="Save job"><i class="fa fa-save fa-2x"></button></i>
-
-                <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top"
-                    title="Delete job"><i class="fa fa-trash fa-2x"></i></button></i>
-            </div>
-        </div>
-        <!-- end of the fourth job -->
-        <!-- fifth job -->
-        <div class="row" id="position">
-            <div class="col-md-6 top">
-                <h3 class="statusDesc">Marvin Castro</h3>
-            </div>
-            <div class="col-md-3 status">
-                <h3 class="statusDesc"> Senior Full Stack Developer</h3>
-            </div>
-            <div class="col-md-3 icons">
-                <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top"
-                    title="View job"><i class="fa fa-eye fa-2x"></i></button></i>
-                </i><button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top"
-                    title="Save job"><i class="fa fa-save fa-2x"></button></i>
-
-                <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top"
-                    title="Delete job"><i class="fa fa-trash fa-2x"></i></button></i>
-            </div>
-        </div>
-        <!-- end of the fifth job -->
+        <!-- end of third row -->
     </div>
 </div>
+<!-- end of admin card -->

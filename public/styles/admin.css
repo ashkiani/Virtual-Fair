@@ -2,19 +2,19 @@
     box-sizing: border-box;
 }
 
-#bckgAdmin {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url("");
+#bcgAdmin {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url("/images/admin.gif");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
+    height: 1500px;
 }
 
 
 /* NAV BAR STARTS */
 
 #navbarAdmin {
-    margin-top: 55px;
     width: 100%;
     overflow: auto;
     font-family: 'Coda Caption', sans-serif;
@@ -44,11 +44,16 @@
     transform: scale(1.1)
 }
 
+#admin-title {
+    margin-top: 100px;
+    color: #fff;
+}
+
 
 /* Add responsiveness - on screens less than 500px, make the navigation links appear on top of each other, instead of next to each other */
 
 @media screen and (max-width: 500px) {
-    .navbar a {
+    #navbarAdmin a {
         float: none;
         display: block;
         width: 100%;
@@ -56,84 +61,81 @@
         margin-top: 20px;
         /* If you want the text to be left-aligned on small screens */
     }
+    #bcgAdmin {
+        max-height: 630px;
+    }
+    #admin-txt {
+        max-width: 375px;
+    }
+    #admin-container {}
 }
 
 
 /* END OF NAVBAR */
 
 
-/* job container */
+/* admin card */
 
-.row {
-    margin: 5px;
+.btn-secondary {
+    background: #ce5937;
+    background: -moz-linear-gradient( -45deg, #ce5937 0%, #e52b50 50%, #c59237 100%);
+    background: -webkit-linear-gradient( -45deg, #ce5937 0%, #e52b50 50%, #c59237 100%);
+    background: linear-gradient(135deg, #ce5937 0%, #e52b50 50%, #c59237 100%);
+    color: #e0dfdc;
+    margin-top: 10px;
+    transition: transform 0.1s;
+    border: 1px solid #e2304d;
+    margin: 5px 10px 5px 10px;
 }
 
-.col-md-6 {
-    padding: 15px;
+.btn-secondary:hover {
+    transform: scale(1.1);
+    border: 1px solid #e2304d;
 }
 
-.top {
-    border-top: 1px solid #EEEEEE;
-    border-left: 1px solid #EEEEEE;
-    border-bottom: 1px solid #EEEEEE;
-    color: #fff;
-    text-align: left;
-    font-family: 'Spartan';
+#admin-container {
+    margin-top: 200px;
 }
 
-.col-md-3 {
+#admin-card {
+    background-color: #515151;
+    color: #FFF;
+    border: 4px solid #e2304d;
+    margin-left: 40px;
+}
+
+#adminJob-title {
+    border-bottom: 1px solid #fff;
+}
+
+.text-muted {
+    border-top: 1px solid #fff;
+}
+
+::placeholder {
     text-align: center;
-    padding-top: 17px;
 }
 
-.style {
-    max-width: 90%;
-    padding: 20px;
-    margin-top: 100px;
+#admin-skill {}
+
+#admin-jobDescription {
+    text-align: left;
 }
 
-.style2 {
-    max-width: 90%;
-    padding: 20px;
+#scheduleBtn {}
+
+#admin-col {
+    margin: 0 auto;
 }
 
-.jobTitle {
-    text-shadow: 1px 0px 1px #CCCCCC, 0px 1px 1px #EEEEEE, 2px 1px 1px #CCCCCC, 1px 2px 1px #EEEEEE, 3px 2px 1px #CCCCCC, 2px 3px 1px #EEEEEE, 4px 3px 1px #CCCCCC, 3px 4px 1px #EEEEEE, 5px 4px 1px #CCCCCC, 4px 5px 1px #EEEEEE, 6px 5px 1px #CCCCCC, 5px 6px 1px #EEEEEE, 7px 6px 1px #CCCCCC, 2px 2px 2px rgba(206, 89, 55, 0);
-    padding: 20px;
+#admin-txt {
+    margin-top: 10px;
+    margin-left: -70px;
+    border: 4px solid #dc4749;
+    -webkit-box-shadow: 5px 5px 7px 5px #000000;
+    box-shadow: 5px 5px 7px 5px #000000;
     border-radius: 10px;
 }
 
-.status {
-    border-top: 1px solid #EEEEEE;
-    border-bottom: 1px solid #EEEEEE;
-    color: #fff;
-    font-family: 'Spartan';
-}
 
-.icons {
-    padding-bottom: 10px;
-    border-top: 1px solid #EEEEEE;
-    border-right: 1px solid #EEEEEE;
-    border-bottom: 1px solid #EEEEEE;
-}
-
-.btn {
-    color: background: #CE5937;
-    background: -moz-linear-gradient(-45deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
-    background: -webkit-linear-gradient(-45deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
-    background: linear-gradient(135deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
-    color: #e0dfdc;
-    margin: 3px;
-    transition: transform .1s
-}
-
-.btn:hover {
-    transform: scale(1.1);
-}
-
-.top:hover {
-    border-left: 6px solid #E2304D;
-}
-
-
-/* end of job container */
+/* end of admin card */
