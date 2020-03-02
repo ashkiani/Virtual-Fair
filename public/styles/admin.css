@@ -53,7 +53,7 @@
 /* Add responsiveness - on screens less than 500px, make the navigation links appear on top of each other, instead of next to each other */
 
 @media screen and (max-width: 500px) {
-    .navbar a {
+    #navbarAdmin a {
         float: none;
         display: block;
         width: 100%;
@@ -61,6 +61,13 @@
         margin-top: 20px;
         /* If you want the text to be left-aligned on small screens */
     }
+    #bcgAdmin {
+        max-height: 630px;
+    }
+    #admin-txt {
+        max-width: 375px;
+    }
+    #admin-container {}
 }
 
 
