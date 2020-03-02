@@ -3,30 +3,5 @@ module.exports = function (sequelize, DataTypes) {
         note: DataTypes.TEXT
     });
     
-
-    AdminActions.associate = function (models) {
-        AdminActions.belongsTo(models.Users, {
-            foreignKey: {
-                allowNull: false
-            }
-        });
-    };
-
-    AdminActions.associate = function (models) {
-        AdminActions.belongsTo(models.Applications, {
-            foreignKey: {
-                allowNull: false
-            }
-        });
-    };
-
-    AdminActions.associate = function (models) {
-        AdminActions.belongsTo(models.Actions, {
-            foreignKey: {
-                allowNull: false
-            }
-        });
-    };
-
     return AdminActions;
 };

@@ -10,15 +10,9 @@ module.exports = function (sequelize, DataTypes) {
         Users.hasMany(models.Applications, {
             onDelete: "cascade"
         });
-    };
-
-    Users.associate = function (models) {
         Users.hasMany(models.AdminActions, {
             onDelete: "cascade"
         });
-    };
-
-    Users.associate = function (models) {
         Users.hasMany(models.UsersTypes, {
             onDelete: "cascade"
         });
