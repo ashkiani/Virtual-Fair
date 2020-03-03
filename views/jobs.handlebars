@@ -27,7 +27,7 @@
       <select class="form-control form-jobsearch" id="exampleFormControlSelect1">
         {{!-- handlebars for location --}}
         {{#each locations}}
-          <option>{{location}}</option>
+          <option>{{this.locationName}}</option>
         {{/each}}
         {{!-- <option>DC</option>
         <option>Virginia</option>
@@ -66,9 +66,9 @@
     <div class="card skill-card">
       <div class="card-body">
 
-        <h5 class="card-title">{{skillTitle}}</h5>
+        <h5 class="card-title">Skill Set</h5>
         <hr style="background-color: #DC4749">
-        <p class="card-text">{{description}}</p>
+        <p class="card-text">{{this.skillTitle}}</p>
         <!-- view skill-set -->
         <button type="button" id="view-skillset" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom"
           title="View Jobs">
@@ -98,10 +98,10 @@
       <h5 class="card-header" style="border-bottom: 1px solid #fff;">{{jobTitle}}</h5>
 
       <div class="card-body">
-        <h5 class="card-title">{{location}}</h5>
+        <h5 class="card-title">{{this.locationName}}</h5>
         <hr style="background-color: #DC4749">
 
-        <p class="card-text">{{jobSkills}}{{jobRequirements}}</p>
+        <p class="card-text">{{this.jobSkills}}{{this.jobRequirements}}</p>
         <!-- apply btn -->
         <button type="button" id="applyJob" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom"
           title="Apply">
@@ -246,5 +246,5 @@
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous"></script>
   {{!-- javascript --}}
-  <script src="/js/job.js" type="text/javascript"></script>
+  <script src="/js/jobs.js" type="text/javascript"></script>
 
