@@ -1,5 +1,4 @@
 require("dotenv").config();
-var path = require("path");  /// (2/29) Marvin - added paths - Siavash let me know if we dont need this 
 var express = require("express");
 var exphbs = require("express-handlebars");
 
@@ -11,7 +10,7 @@ var PORT = process.env.PORT || 3000;
 // Middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(express.static(path.join(__dirname, './public')));  // (2/29)- Marvin - changed this - Siavash let me know if we dont need this 
+app.use(express.static("public"));
 
 // Handlebars
 app.engine(
