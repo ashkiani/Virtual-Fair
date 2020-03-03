@@ -1,26 +1,405 @@
-<div id="home">
-  <div class="container">
-    <div class="row">
-      <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
-        <nav class="navbar navbar-dark bg-primary">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/jobs">Jobs</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/status">Status</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
+<!-- jumbotron image display -->
+
+<div class="jumbotron" id="bcgIndex">
+  <!-- nav starts -->
+  <nav class="navbar" id="indexNavbar">
+    <a href="/">HOME</a>
+    <a href="/jobs">JOB PORTAL</a>
+    <a href="/status">STATUS PORTAL</a>
+    <a href="/admin">ADMIN PORTAL</a>
+  </nav>
+  <!-- nav ends -->
+  <!-- text for title -->
+  <h1 class="display-4" id="text">
+    HOST AMAZING VIRTUAL EVENTS <br /> THAT MAKE YOU STAND OUT
+  </h1>
+  <p class="lead" id="textSub">
+    Host Virtual Job Fairs, Online Tradeshows, Open Days & more. Get results you need with a customizable virtual
+    events software backed by unbeatable customer support.
+  </p>
+  <!-- end text title -->
+
+  <!-- start of modal -->
+
+  <a href="#openModal"><button type="button" class="btn btn-primary" id="demo">
+      <span> <i class="fa fa-play"></i> </span> Watch a Demo
+    </button></a>
+
+  <div id="openModal" class="modalDialog">
+    <div class="target">
+      <h2 class="demo">Demo Video</h2>
+
+      <iframe width="700px" height="500px" src="https://www.youtube.com/embed/CAkDRt-f1k8?enablejsapi=1" frameborder="0"
+        allowfullscreen id="video"></iframe>
+
+      <a href="#close" title="Close" id="close">X</a>
+    </div>
+  </div>
+  <!-- end of modal -->
+</div>
+<!-- end of image display -->
+
+<div class="container-fluid" id="vf">
+  <h2 class="display-4">
+    EVERYTHING YOU NEED <br /> FOR A SUCCESSFUL VIRTUAL EVENT
+  </h2>
+  <p class="lead">
+    Virtual Fairs is more than just a technology. We offer end-to-end services to ensure your online event is a
+    smashing success.
+  </p>
+  <div class="row" id="row1">
+    <div class="col-md-3">
+      <h4>REACH AUDIENCES AROUND THE WORLD</h4>
+      <i class="fa fa-globe fa-3x"></i>
+      <br />
+      <p>Reach massive audiences without geographical boundaries.</p>
+    </div>
+    <div class="col-md-3">
+      <h4>ENGAGE WITH IMPACT</h4>
+      <i class="fa fa-comments fa-3x"></i>
+      <br />
+      <p>Connect with visitors with interactive chat tools and webinars.</p>
+    </div>
+    <div class="col-md-3">
+      <h4>MEASURE YOUR ROI</h4>
+      <i class="fa fa-stack-overflow fa-3x"></i>
+      <br />
+      <p>
+        Gain reliable and in-depth reports on how effective your event was.
+      </p>
+    </div>
+  </div>
+
+  <div class="row" id="row2">
+    <div class="col-md-3">
+      <h4>24/7 GLOBAL CUSTOMER SUPPORT</h4>
+      <i class="fas fa-headset fa-3x"></i>
+      <p>
+        Get super-responsive and passionate customer support for any timezone.
+      </p>
+    </div>
+    <div class="col-md-3">
+      <h4>CUSTOMIZABLE & COST-EFFECTIVE</h4>
+      <i class="fas fa-tools fa-3x"></i>
+      <br />
+      <p>
+        Affordable, localized and highly configurable software without any compromise.
+      </p>
+    </div>
+    <div class="col-md-3">
+      <h4>RELIABLY EFFECTIVE</h4>
+      <i class="fa fa-users fa-3x"></i>
+      <br />
+      <br />
+      <p>
+        Tried and tested Virtual Events for all industries, audiences and geographies.
+      </p>
     </div>
   </div>
 </div>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
+<!-- sub jumbotron -->
+<div class="jumbotron jumbotron-fluid" id="subJumbotron">
+  <div class="container">
+    <h1 class="display-4" id="change-text">
+      START THINGS OFF WITH A GREAT EVENT LANDING PAGE
+    </h1>
+    <p class="lead" id="one">
+      We design custom event landing pages for you according to your specification and branding guidelines. In
+      addition to landing a great first impression, the page helps explain what your event is about which aids in
+      delivering a compelling narrative as to
+      why the visitor should register and attend.
+    </p>
+
+    <!-- image slideshow -->
+
+    <img class="mySlides w3-animate-fading" src="./images/exmp1.png" />
+    <img class="mySlides w3-animate-fading" src="./images/exmp2.jpg" width="100%" />
+    <img class="mySlides w3-animate-fading" src="./images/examp3.jpg" width="100%" />
+    <img class="mySlides w3-animate-fading" src="./images/exmpl4.jpg" />
+    <img class="mySlides w3-animate-fading" src="./images/exmpl5.jpg" width="100%" />
+    <img class="mySlides w3-animate-fading" src="./images/exmpl6.jpg" />
+  </div>
+</div>
+
+<!-- end of sub jumbotron -->
+
+<!-- jumbotron 3 -->
+
+<div class="jumbotron jumbotron-fluid" id="jumbotron3">
+
+  <div class="container">
+    <div class="card-group">
+      <div class="card card-display left">
+        <i class="fa fa-align-justify fa-5x"></i>
+        <div class="card-body">
+          <h5 class="card-title">
+            CAPTURE AUDIENCES WITH A CUSTOM REGISTRATION FORM
+          </h5>
+          <p class="card-text">
+            Your event, your rules. Capture any combination of fields you require to better serve both your audience
+            and exhibitors.
+          </p>
+        </div>
+      </div>
+      <div class="card  card-display">
+        <i class="fa fa-users fa-5x"></i>
+        <div class="card-body">
+          <h5 class="card-title">
+            WELCOME VISITORS WITH YOUR VIRTUAL LOBBY
+          </h5>
+          <p class="card-text">
+            Once a visitor logs in, they are taken to a beautiful 3D lobby that functions as a launchpad guiding them
+            to various sections of the event.
+          </p>
+        </div>
+      </div>
+      <div class="card card-display right">
+        <i class="fa fa-exclamation-circle fa-5x"></i>
+        <div class="card-body">
+          <h5 class="card-title">
+            GUIDE AUDIENCES WITH AN INFORMATION DESK
+          </h5>
+          <p class="card-text">
+            Your audience is never lost. The convenient information desk acts as their go-to place whenever they
+            aren't sure where to go.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end of jumbotron 3 -->
+
+<!-- image with side text -->
+
+<div class="container-fluid" id="sideText">
+  <div class="row">
+    <div class="col-6" id="col">
+      <h2 class="box-shadow">
+        Drive employee engagement with an intuitive & highly visual experience
+      </h2>
+      <br>
+      <p class="boxText">
+        Virtual Fairs Virtual Benefits Fair specializes in providing an immersive & interactive experience that is
+        easy to learn. They require no downloads or Flash, are mobile-compatible & work on all modern browsers.
+      </p>
+    </div>
+    <div class="col-6">
+      <img src="./images/live.gif" class="booth" alt="" />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-6">
+      <img src="./images/liveBooth.gif" class="booth" alt="" />
+    </div>
+    <div class="col-6" id="col">
+      <h2 class="box-shadow">
+        Engage visitors with an easy to use virtual environment accessible from any device.
+      </h2>
+      <p class="boxText">
+        Provide easy access to your online product launch for visitors on the move by constructing a virtual space
+        that is compatible with smartphones and tablet devices
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="container-fluid" id="bcgPic">
+      <h2 class="bcgText">VIRTUAL FAIR LISTED AS ONE OF THE <br> FASTEST GROWING <br> COMPANIES OF 2019</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-6" id="col">
+      <h2 class="box-shadow">Enable Visitors to save what they like: Virtual Briefcase</h2>
+      <p class="boxText">
+        The Virtual Briefcase helps users store anything they see in the virtual environment and allows them to
+        download it once the event ends.
+        <br>
+        Provide rich digital collateral like videos, product photos, discount coupons & presentations to help attendees
+        learn
+        about your offerings.
+      </p>
+    </div>
+    <div class="col-6">
+      <img src="./images/livepdf.gif" class="booth" alt="" />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-6">
+      <img src="./images/liveCellphone.gif" class="booth" alt="" />
+    </div>
+    <div class="col-6" id="col">
+      <h2 class="box-shadow">Kickstart the conversation with Interactivity Tools</h2>
+      <p class="boxText">
+        What makes the virtual event experience so special? Booth representatives can engage with visitors via
+        text/audio/video chat in real time. This interaction can happen via a group chat or through a 1:1 chat window
+        if privacy is required.
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-6" id="col">
+      <h2 class="box-shadow">Set yourself apart with webinars</h2>
+      <p class="boxText">
+        Virtual Fairs provides a third-party webinar facility that allows you host speakers during your event that
+        your visitors can access. Visitors can also participate in Q&A and take polls.
+      </p>
+    </div>
+    <div class="col-6">
+      <img src="./images/liveWeb.gif" class="booth" alt="" />
+    </div>
+  </div>
+</div>
+
+<!-- end of image with side text -->
+
+<!-- Meet the team -->
+<div class="container-fluid" id="project-team">
+  <h1 class="display-4" id="center">Meet the Team</h1>
+
+  <br />
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm">
+        <div class="card siavash">
+          <img src="./images/siavash.jpg" alt="" width="150px" style="border-radius: 50%; margin:auto;" />
+          <div class="container">
+            <h2>Siavash Ashkiani</h2>
+            <p class="title">
+              Software Engineer and Certified Scrum Master
+            </p>
+            <a href=" https://ashkiani.github.io/Portfolio/" target="_blank"><button class="button">Contact</button></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm">
+        <div class="card gene">
+          <img src="https://ca.slack-edge.com/TNRD35TAR-UPYAH0U95-fd67a19b66aa-512" width="150px"
+            style="border-radius: 50%; margin:auto;" />
+          <div class="container">
+            <h2>Gene Edwards</h2>
+            <p class="title">Senior Full Stack Developer</p>
+            <br />
+            <a href=" https://genesaiyan.github.io/Bootstrap-Portfolio/index.html" target="_blank"><button
+                class="button">Contact</button></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm">
+        <div class="card niko">
+          <img src="./images/Niko.jpg" width="150px" style="border-radius: 50%; margin:auto;" />
+          <div class="container">
+            <h2>Niko Jovanovic</h2>
+            <p class="title">Junior Full Stack Developer</p>
+            <br />
+            <a href="https://nikola4work.github.io/Niko-ThemePortfolio/" target="_blank"><button
+                class="button">Contact</button></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm">
+        <div class="card marvin">
+          <img src="./images/marvin.jpg" width="150px" style="border-radius: 50%; margin:auto;" />
+
+          <div class="container">
+            <h2>Marvin Castro</h2>
+            <p class="title">
+              Junior Full Stack Developer
+            </p>
+            <br>
+
+            <a href="https://mrcastro7.github.io/UpdatedPorfolio/" target="_blank"><button
+                class="button">Contact</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- End of team -->
+
+<!-- Contact form -->
+
+<div class="container-fluid" id="contact">
+  <h2 class="contact">CONTACT US</h2>
+  <p class="chat">
+    Planning a virtual event or interested in learning more about how you
+    can increase sales through online events? <br />
+    Let's chat!
+  </p>
+  <form>
+    <div class="form-row">
+      <div class="col">
+        <input type="text" class="form-control" placeholder="First name" />
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Last name" />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col">
+        <input type="text" class="form-control" placeholder="E-mail" />
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Company" />
+      </div>
+    </div>
+  </form>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1"></label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Additional Information"
+      rows="3"></textarea>
+  </div>
+  <button type="button" class="btn btn-primary" id="demo">
+    <span> <i class="fa fa-share-square"></i> </span> Submit
+  </button>
+  <div class="container-fluid" id="social">
+    <i class="fa fa-facebook-square fa-2x"></i>
+    <i class="fa fa-instagram fa-2x"></i>
+    <i class="fa fa-twitter fa-2x"></i>
+    <a href="#bcgIndex"><i class="fa fa-arrow-up fa-3x"></i></a>
+  </div>
+</div>
+
+
+<!-- jquery cdn -->
+<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+<!-- js code for modal video and curosel -->
+<script>
+  /* change image every 5 sec */
+  var myIndex = 0;
+  carousel();
+
+  function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {
+      myIndex = 1;
+    }
+    x[myIndex - 1].style.display = "block";
+    setTimeout(carousel, 5000);
+  }
+
+  /* Close modal demo video on x click */
+
+  $("#close").on("click", function () {
+    //$('#video').stopVideo();
+    $("#video")[0].contentWindow.postMessage(
+      '{"event":"command","func":"' + "stopVideo" + '","args":""}',
+      "*"
+    );
+  });
+
+</script>
+<!-- end of contact form -->

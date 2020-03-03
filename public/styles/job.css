@@ -1,0 +1,188 @@
+* {
+    box-sizing: border-box;
+}
+
+#bcgJobs {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url("/images/job.gif");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.navbar {
+    max-width: 100%;
+    overflow: auto;
+    font-family: "Coda Caption", sans-serif;
+    font-family: "Nanum Gothic", sans-serif;
+}
+
+.navbar a {
+    color: #fff;
+    border-radius: 8px;
+    background-color: #ce5937;
+    background: -moz-linear-gradient( -45deg, #ce5937 0%, #e52b50 50%, #c59237 100%);
+    background: -webkit-linear-gradient( -45deg, #ce5937 0%, #e52b50 50%, #c59237 100%);
+    background: linear-gradient(135deg, #ce5937 0%, #e52b50 50%, #c59237 100%);
+    float: left;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 17px;
+    width: 20%;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+
+/* Add a background color on mouse-over */
+
+.navbar a:hover {
+    transform: scale(1.1);
+}
+
+
+/* Add responsiveness - on screens less than 500px, make the navigation links appear on top of each other, instead of next to each other */
+
+@media screen and (max-width: 500px) {
+    .navbar a {
+        float: none;
+        display: block;
+        width: 100%;
+        overflow: hidden;
+        margin-top: 20px;
+        /* If you want the text to be left-aligned on small screens */
+    }
+}
+
+
+/* end of navbar */
+
+
+/* container for search */
+
+#search-container {
+    margin-top: 120px;
+    color: #fff;
+    text-align: center;
+    font-family: "Coda Caption", sans-serif;
+    font-family: "Nanum Gothic", sans-serif;
+    text-transform: uppercase;
+}
+
+#textSub-status {
+    text-align: center;
+    margin-top: 20px;
+    font-family: "Coda Caption", sans-serif;
+    font-family: "Nanum Gothic", sans-serif;
+    color: #eeee;
+    font-size: 15px;
+}
+
+.dream-job {
+    font-family: "Coda Caption", sans-serif;
+    letter-spacing: 1.2rem;
+}
+
+#search-Div {
+    margin-top: 35px;
+    font-family: "Coda Caption", sans-serif;
+    font-family: "Nanum Gothic", sans-serif;
+}
+
+.form-jobtitle {
+    width: 300px;
+    margin: 0 auto;
+    border: 2px solid #e2304d;
+    font-family: "Coda Caption", sans-serif;
+    font-family: "Nanum Gothic", sans-serif;
+    text-transform: uppercase;
+}
+
+#search-form {
+    margin-top: 60px;
+}
+
+.form-jobsearch {
+    margin: 0 auto;
+    border: 2px solid #e2304d;
+    width: 300px;
+    font-family: "Coda Caption", sans-serif;
+    font-family: "Nanum Gothic", sans-serif;
+    text-transform: uppercase;
+}
+
+#search-button {
+    font-size: 16px;
+    margin-bottom: 50px;
+    background: #ce5937;
+    background: -moz-linear-gradient( -45deg, #ce5937 0%, #e52b50 50%, #c59237 100%);
+    background: -webkit-linear-gradient( -45deg, #ce5937 0%, #e52b50 50%, #c59237 100%);
+    background: linear-gradient(135deg, #ce5937 0%, #e52b50 50%, #c59237 100%);
+    color: #e0dfdc;
+    margin-top: 10px;
+    transition: transform 0.1s;
+    border: 1px solid #e2304d;
+}
+
+#serach-button:hover {
+    transform: scale(1.1);
+    border: 1px solid #e2304d;
+}
+
+
+/* end of container for search */
+
+
+/* search title */
+
+.result-title {
+    font-size: 55px;
+    border-radius: 10px;
+    text-shadow: 1px 0px 1px #cccccc, 0px 1px 1px #eeeeee, 2px 1px 1px #cccccc, 1px 2px 1px #eeeeee, 3px 2px 1px #cccccc, 2px 3px 1px #eeeeee, 4px 3px 1px #cccccc, 3px 4px 1px #eeeeee, 5px 4px 1px #cccccc, 4px 5px 1px #eeeeee, 6px 5px 1px #cccccc, 5px 6px 1px #eeeeee, 7px 6px 1px #cccccc, 2px 2px 2px rgba(206, 89, 55, 0);
+    text-align: center;
+    margin-top: 100px;
+    padding: 50px;
+    border-radius: 8px;
+    background-color: #ce5937;
+    background: -moz-linear-gradient( -45deg, #ce5937 0%, #e52b50 50%, #c59237 100%);
+    background: -webkit-linear-gradient( -45deg, #ce5937 0%, #e52b50 50%, #c59237 100%);
+    background: linear-gradient(135deg, #ce5937 0%, #e52b50 50%, #c59237 100%);
+    font-family: "Coda Caption", sans-serif;
+}
+
+
+/* end of search title */
+
+
+/* jobs by skillset */
+
+#skill-set {
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+.card-deck {
+    width: 98%;
+    margin: 15px 0px 15px 15px;
+}
+
+.skill-card {
+    border-radius: 8px;
+    background-color: #515151;
+    color: #fff;
+    border: 4px solid #dc4749;
+    max-width: 270px;
+    -webkit-box-shadow: 5px 5px 7px 5px #000000;
+    box-shadow: 5px 5px 7px 5px #000000;
+}
+
+.job-card {
+    border-radius: 8px;
+    background-color: #515151;
+    color: #fff;
+    border: 4px solid #dc4749;
+    -webkit-box-shadow: 5px 5px 7px 5px #000000;
+    box-shadow: 5px 5px 7px 5px #000000;
+}
+
+
+/* end of jobs by skillset*/
