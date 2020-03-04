@@ -14,5 +14,5 @@ $("#search-button").on("click", function() {
     console.log(data);
     // code to display compare searchJobs to Database data
     // Then display on page
-  })
+  });
 });
