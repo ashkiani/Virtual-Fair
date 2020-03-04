@@ -27,19 +27,14 @@
       <select class="form-control form-jobsearch" id="exampleFormControlSelect1">
         {{!-- handlebars for location --}}
         {{#each locations}}
-          <option>{{location}}</option>
+          <option>{{this.location}}</option>
         {{/each}}
-        {{!-- <option>DC</option>
-        <option>Virginia</option>
-        <option>Maryland</option>
-        <option>New York</option>
-        <option>California</option> --}}
       </select>
     </div>
     <div class="form-group" id="search-Div">
 
       <label for="exampleInputEmail1">Job Title</label>
-      <input type="email" class="form-control form-jobtitle" id="exampleInputEmail1" aria-describedby="emailHelp" />
+      <input type="text" class="form-control form-jobtitle" id="jobSearch" aria-describedby="emailHelp" />
     </div>
 
     <button type="button" class="btn btn-primary" id="search-button">
@@ -62,13 +57,14 @@
   <!-- first row -->
   <div class="card-deck">
     <!-- skill-set 1 -->
+    {{!-- handlebars for skills tabs --}}
     {{#each skills}}
     <div class="card skill-card">
       <div class="card-body">
 
-        <h5 class="card-title">{{skillTitle}}</h5>
+        <h5 class="card-title">Skill Set</h5>
         <hr style="background-color: #DC4749">
-        <p class="card-text">{{description}}</p>
+        <p class="card-text">{{this.skill}}</p>
         <!-- view skill-set -->
         <button type="button" id="view-skillset" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom"
           title="View Jobs">
@@ -92,16 +88,17 @@
         </button>
       </div>
     </div> --}}
+    {{!-- handlebars for jobs results --}}
     {{#each jobResult}}
     <!-- job serach output -->
     <div class="card job-card">
       <h5 class="card-header" style="border-bottom: 1px solid #fff;">{{jobTitle}}</h5>
 
       <div class="card-body">
-        <h5 class="card-title">{{location}}</h5>
+        <h5 class="card-title">{{this.locationName}}</h5>
         <hr style="background-color: #DC4749">
 
-        <p class="card-text">{{jobSkills}}{{jobRequirements}}</p>
+        <p class="card-text">{{this.jobSkills}}{{this.jobRequirements}}</p>
         <!-- apply btn -->
         <button type="button" id="applyJob" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom"
           title="Apply">
@@ -241,10 +238,7 @@
 <!-- end of skill-set container -->
 
 {{!-- jQuery --}}
-   <script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
-  {{!-- javascript --}}
-  <script src="/js/job.js" type="text/javascript"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+{{!-- javascript --}}
+  <script src="/js/jobs.js" type="text/javascript"></script>
 
