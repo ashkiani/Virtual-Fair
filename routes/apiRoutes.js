@@ -1,28 +1,32 @@
-//var db = require("../models");
-let jobs = [];
-jobs.push({
-  jobId: "1",
-  jobTitle: "test job1",
-  jobSkills: ["skill1", "skill2"],
-  jobRequirements: ["req1", "req2"]
-});
-jobs.push({
-  jobId: "2",
-  jobTitle: "test job2",
-  jobSkills: ["skill1", "skill3"],
-  jobRequirements: ["req5", "req2"]
-});
+const db = require("../models");
+// let jobs = [];
+// jobs.push({
+//   jobId: "1",
+//   jobTitle: "test job1",
+//   jobSkills: ["skill1", "skill2"],
+//   jobRequirements: ["req1", "req2"]
+// });
+// jobs.push({
+//   jobId: "2",
+//   jobTitle: "test job2",
+//   jobSkills: ["skill1", "skill3"],
+//   jobRequirements: ["req5", "req2"]
+// });
 
 module.exports = function(app) {
   app.get("/api/jobs", async (req, res) => {
     try {
       console.log("api get received at /api/jobs");
-      res.json(jobs);
-      //jobs
-      // console.log(db.tblJobs);
-      // db.tblJobs.findAll({}).then(allJobs => {
-      //   res.json(allJobs);
-      // });
+      let query =
+        "SELECT Jobs.id, Jobs.Title, Jobs.Description, Locations.Location, Skills.Skill, Requirements.Requirement ";
+      query +=
+        "FROM Locations INNER JOIN (Skills INNER JOIN (Requirements INNER JOIN ((Jobs INNER JOIN JobRequirements ON Jobs.id = JobRequirements.Jobid) INNER JOIN JobSkills ON Jobs.id = JobSkills.Jobid) ON Requirements.id = JobRequirements.Requirementid) ON Skills.id = JobSkills.Skillid) ON Locations.id = Jobs.Locationid;";
+      let records = await db.sequelize.query(query, {
+        bind: ["active"],
+        type: db.sequelize.QueryTypes.SELECT
+      });
+      console.log(records);
+      res.status(200).json(records);
     } catch (err) {
       console.log(err);
       res.send("Error occurred:" + err);
@@ -41,12 +45,7 @@ module.exports = function(app) {
       console.log(req.body.cities);
       console.log(req.body.skills);
       console.log(req.body.keywords);
-      // db.tblJobs.findAll({ include: db.tblJobsSkills, where: { '$tbljobsskills.skill_id$': req.body.cities } }).then(function (foundJobs) {
-      //   // res.json(allJobs);
-      //   // response.status(201).json(allJobs);
-      //   // response.status(404, 'The task is not found').send();
-      //   res.json(foundJobs);
-      // });
+
       //it returns an array of job objects that include job id, job title and job skills and job requirements.
       //object below is for initial testing only. The plan is to populate it from the database.
       res.json(jobs);
