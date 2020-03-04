@@ -1,27 +1,13 @@
 const db = require("../models");
-// let jobs = [];
-// jobs.push({
-//   jobId: "1",
-//   jobTitle: "test job1",
-//   jobSkills: ["skill1", "skill2"],
-//   jobRequirements: ["req1", "req2"]
-// });
-// jobs.push({
-//   jobId: "2",
-//   jobTitle: "test job2",
-//   jobSkills: ["skill1", "skill3"],
-//   jobRequirements: ["req5", "req2"]
-// });
+const jobsSelectQuery = `SELECT Jobs.id, Jobs.Title, Jobs.Description, Locations.Location, Skills.Skill, Requirements.Requirement 
+FROM Locations INNER JOIN (Skills INNER JOIN (Requirements INNER JOIN ((Jobs INNER JOIN JobRequirements ON Jobs.id = JobRequirements.Jobid)
+ INNER JOIN JobSkills ON Jobs.id = JobSkills.Jobid) ON Requirements.id = JobRequirements.Requirementid) ON Skills.id = JobSkills.Skillid) ON Locations.id = Jobs.Locationid`;
 
 module.exports = function(app) {
   app.get("/api/jobs", async (req, res) => {
     try {
       console.log("api get received at /api/jobs");
-      let query =
-        "SELECT Jobs.id, Jobs.Title, Jobs.Description, Locations.Location, Skills.Skill, Requirements.Requirement ";
-      query +=
-        "FROM Locations INNER JOIN (Skills INNER JOIN (Requirements INNER JOIN ((Jobs INNER JOIN JobRequirements ON Jobs.id = JobRequirements.Jobid) INNER JOIN JobSkills ON Jobs.id = JobSkills.Jobid) ON Requirements.id = JobRequirements.Requirementid) ON Skills.id = JobSkills.Skillid) ON Locations.id = Jobs.Locationid;";
-      let records = await db.sequelize.query(query, {
+      let records = await db.sequelize.query(jobsSelectQuery, {
         bind: ["active"],
         type: db.sequelize.QueryTypes.SELECT
       });
@@ -37,18 +23,83 @@ module.exports = function(app) {
     try {
       console.log("api post received at /api/jobs");
       //Postman test
-      // {"cities": [1, 2, 3],
-      //  "skills": [4, 5, 6],
-      //  "keywords": ["k1", "k2", "k3"]
-      // }
+      // {
+      //   "locations": [1,2,3],
+      //   "skills":[1,5,6],
+      //   "keywords":["web","JavaScript","cool"]
+      //   }
       console.log(req.body);
       console.log(req.body.cities);
       console.log(req.body.skills);
       console.log(req.body.keywords);
-
-      //it returns an array of job objects that include job id, job title and job skills and job requirements.
-      //object below is for initial testing only. The plan is to populate it from the database.
-      res.json(jobs);
+      let whereClauseNeeded = false;
+      let skills = "";
+      if (req.body.skills !== null) {
+        if (req.body.skills.length > 0) {
+          skills = req.body.skills.join();
+          whereClauseNeeded = true;
+        }
+      }
+      let locations = "";
+      if (req.body.locations !== null) {
+        if (req.body.locations.length > 0) {
+          locations = req.body.locations.join();
+          whereClauseNeeded = true;
+        }
+      }
+      let keywordsPresent = false;
+      if (req.body.keywords !== null) {
+        if (req.body.keywords.length > 0) {
+          //keywords = req.body.keywords.join();
+          whereClauseNeeded = true;
+          keywordsPresent = true;
+        }
+      }
+      let whereClause = "";
+      if (whereClauseNeeded) {
+        let ANDNeeded = false;
+        whereClause = " WHERE ";
+        if (skills !== "") {
+          whereClause += `JobSkills.Skillid IN (${skills})`;
+          ANDNeeded = true;
+        }
+        if (locations !== "") {
+          if (ANDNeeded) {
+            whereClause += " AND ";
+          }
+          whereClause += `Jobs.Locationid IN(${locations})`;
+          ANDNeeded = true;
+        }
+        if (keywordsPresent) {
+          let keywords = req.body.keywords.map(keyword => {
+            return `--field-- LIKE '%${keyword}%'`;
+          });
+          let keywordsCondition = keywords.join();
+          keywordsCondition = keywordsCondition.replace(/,/g, " OR ");
+          let keywordsTitle = keywordsCondition.replace(
+            /--field--/g,
+            "Jobs.Title"
+          );
+          let keywordsDescription = keywordsCondition.replace(
+            /--field--/g,
+            "Jobs.Description"
+          );
+          if (ANDNeeded) {
+            whereClause += " AND ";
+          }
+          whereClause += `(${keywordsTitle}) OR (${keywordsDescription})`;
+        }
+        console.log("---");
+        console.log("query:");
+        console.log(jobsSelectQuery + whereClause);
+        console.log("---");
+      }
+      let records = await db.sequelize.query(jobsSelectQuery + whereClause, {
+        bind: ["active"],
+        type: db.sequelize.QueryTypes.SELECT
+      });
+      console.log(records);
+      res.status(200).json(records);
     } catch (err) {
       console.log(err);
       res.send("Error occurred:" + err);
