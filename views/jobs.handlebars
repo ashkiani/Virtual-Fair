@@ -27,13 +27,8 @@
       <select class="form-control form-jobsearch" id="exampleFormControlSelect1">
         {{!-- handlebars for location --}}
         {{#each locations}}
-          <option>{{this.locationName}}</option>
+          <option>{{this.location}}</option>
         {{/each}}
-        {{!-- <option>DC</option>
-        <option>Virginia</option>
-        <option>Maryland</option>
-        <option>New York</option>
-        <option>California</option> --}}
       </select>
     </div>
     <div class="form-group" id="search-Div">
@@ -62,13 +57,14 @@
   <!-- first row -->
   <div class="card-deck">
     <!-- skill-set 1 -->
+    {{!-- handlebars for skills tabs --}}
     {{#each skills}}
     <div class="card skill-card">
       <div class="card-body">
 
         <h5 class="card-title">Skill Set</h5>
         <hr style="background-color: #DC4749">
-        <p class="card-text">{{this.skillTitle}}</p>
+        <p class="card-text">{{this.skill}}</p>
         <!-- view skill-set -->
         <button type="button" id="view-skillset" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom"
           title="View Jobs">
@@ -92,6 +88,7 @@
         </button>
       </div>
     </div> --}}
+    {{!-- handlebars for jobs results --}}
     {{#each jobResult}}
     <!-- job serach output -->
     <div class="card job-card">
