@@ -23,10 +23,80 @@ module.exports = function(app) {
   });
 
   // Load Status page
-  app.get("/status", (req, res) => res.render("status")); //res.send('Status page -- UNDER CONSTRUCTION!')
+  app.get("/status", (req, res) => {
+    db.Applications.findAll({}).then(async dbApplications => {
+      let foundApplications = [];
+      for (let i = 0; i < dbApplications.length; i++) {
+        let userName = await db.Users.findOne({
+          attributes: ["firstname", "lastname"],
+          where: { id: dbApplications[i].UserId }
+        });
+        let jobTitle = await db.Jobs.findOne({
+          attributes: ["title"],
+          where: { id: dbApplications[i].JobId }
+        });
+        let status = await db.AdminActions.findOne({
+          attributes: ["ActionId", "updatedAt"],
+          where: { id: dbApplications[i].id },
+          order: ["updatedAt"]
+        });
+        let action = await db.Actions.findOne({
+          attributes: ["action"],
+          where: { id: status.ActionId }
+        });
+        foundApplications.push({
+          id: dbApplications[i].id,
+          note: dbApplications[i].note,
+          userId: dbApplications[i].UserId,
+          userName: `${userName.firstname} ${userName.lastname}`,
+          jobId: dbApplications[i].JobId,
+          jobTitle: jobTitle.title,
+          status: action.action,
+          date: status.updatedAt
+        });
+      }
+      console.log(foundApplications);
+      res.render("status", foundApplications);
+    });
+  });
 
   // Load admin page
-  app.get("/admin", (req, res) => res.render("admin"));
+  app.get("/admin", (req, res) => {
+    db.Applications.findAll({}).then(async dbApplications => {
+      let foundApplications = [];
+      for (let i = 0; i < dbApplications.length; i++) {
+        let userName = await db.Users.findOne({
+          attributes: ["firstname", "lastname"],
+          where: { id: dbApplications[i].UserId }
+        });
+        let jobTitle = await db.Jobs.findOne({
+          attributes: ["title"],
+          where: { id: dbApplications[i].JobId }
+        });
+        let status = await db.AdminActions.findOne({
+          attributes: ["ActionId", "updatedAt"],
+          where: { id: dbApplications[i].id },
+          order: ["updatedAt"]
+        });
+        let action = await db.Actions.findOne({
+          attributes: ["action"],
+          where: { id: status.ActionId }
+        });
+        foundApplications.push({
+          id: dbApplications[i].id,
+          note: dbApplications[i].note,
+          userId: dbApplications[i].UserId,
+          userName: `${userName.firstname} ${userName.lastname}`,
+          jobId: dbApplications[i].JobId,
+          jobTitle: jobTitle.title,
+          status: action.action,
+          date: status.updatedAt
+        });
+      }
+      console.log(foundApplications);
+      res.render("admin", foundApplications);
+    });
+  });
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
