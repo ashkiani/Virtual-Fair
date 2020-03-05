@@ -48,7 +48,7 @@ function getJobs(condition, res) {
   });
 }
 
-module.exports = function (app) {
+module.exports = function(app) {
   app.get("/api/jobs", async (req, res) => {
     try {
       console.log("api get received at /api/jobs");
