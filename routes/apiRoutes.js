@@ -109,17 +109,15 @@ module.exports = function(app) {
     try {
       console.log("api get received at /api/locations");
       //it returns an array of objects that include location id and location name. The front-end can use this to populate the drop-downs, etc...
-      //object below is for initial testing only. The plan is to populate it from the database.
-      let result = [];
-      result.push({
-        locationId: "1",
-        locationName: "Location1"
-      });
-      result.push({
-        locationId: "2",
-        locationName: "Location2"
-      });
-      res.json(result);
+      db.Locations.findAll({ attributes: ["id", "location"] }).then(
+        async allLocations => {
+          let output = allLocations.map(location => {
+            return { id: location.id, location: location.location };
+          });
+          console.log(output);
+          res.status(200).json(output);
+        }
+      );
     } catch (err) {
       console.log(err);
       res.send("Error occurred:" + err);
