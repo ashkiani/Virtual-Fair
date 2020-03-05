@@ -1,18 +1,58 @@
 const db = require("../models");
-const jobsSelectQuery = `SELECT Jobs.id, Jobs.Title, Jobs.Description, Locations.Location, Skills.Skill, Requirements.Requirement 
-FROM Locations INNER JOIN (Skills INNER JOIN (Requirements INNER JOIN ((Jobs INNER JOIN JobRequirements ON Jobs.id = JobRequirements.Jobid)
- INNER JOIN JobSkills ON Jobs.id = JobSkills.Jobid) ON Requirements.id = JobRequirements.Requirementid) ON Skills.id = JobSkills.Skillid) ON Locations.id = Jobs.Locationid`;
+function getJobs(condition, res) {
+  //Siavash 3/4/2020: I saw a couple of issue with using .findAll({ include: { all: true, nested: true }})
+  //1- It returns more than what is needed and it has poor performance
+  //2- It wasn't working for Skills - it complained about a missing relationship but we know the relationships exists and works correctly
+  // Hence I added a couple of nested queries to retrieve only what is required for this route.
+  db.Jobs.findAll({
+    include: [db.JobSkills, db.JobRequirements],
+    where: condition
+  }).then(async allJobs => {
+    let output = [];
+    for (let i = 0; i < allJobs.length; i++) {
+      let location = await db.Locations.findOne({
+        attributes: ["location"],
+        where: { id: allJobs[i].LocationId }
+      });
+      let skillIds = allJobs[i].JobSkills.map(jobSkill => {
+        return jobSkill.SkillId;
+      });
+      let skills = await db.Skills.findAll({
+        attributes: ["skill"],
+        where: { id: skillIds }
+      });
+      skills = skills.map(skill => {
+        return skill.skill;
+      });
+      let ReqIds = allJobs[i].JobRequirements.map(JobRequirement => {
+        return JobRequirement.RequirementId;
+      });
+      let requirements = await db.Requirements.findAll({
+        attributes: ["requirement"],
+        where: { id: ReqIds }
+      });
+      requirements = requirements.map(requirement => {
+        return requirement.requirement;
+      });
+      output.push({
+        id: allJobs[i].id,
+        title: allJobs[i].title,
+        description: allJobs[i].description,
+        location: location.location,
+        skills: skills,
+        requirements: requirements
+      });
+    }
+    console.log(output);
+    res.status(200).json(output);
+  });
+}
 
 module.exports = function(app) {
   app.get("/api/jobs", async (req, res) => {
     try {
       console.log("api get received at /api/jobs");
-      let records = await db.sequelize.query(jobsSelectQuery, {
-        bind: ["active"],
-        type: db.sequelize.QueryTypes.SELECT
-      });
-      console.log(records);
-      res.status(200).json(records);
+      getJobs(null, res);
     } catch (err) {
       console.log(err);
       res.send("Error occurred:" + err);
@@ -26,80 +66,39 @@ module.exports = function(app) {
       // {
       //   "locations": [1,2,3],
       //   "skills":[1,5,6],
-      //   "keywords":["web","JavaScript","cool"]
+      //   "keywords":"web"
       //   }
       console.log(req.body);
-      console.log(req.body.cities);
+      console.log(req.body.locations);
       console.log(req.body.skills);
       console.log(req.body.keywords);
-      let whereClauseNeeded = false;
-      let skills = "";
-      if (req.body.skills !== null) {
-        if (req.body.skills.length > 0) {
-          skills = req.body.skills.join();
-          whereClauseNeeded = true;
-        }
-      }
-      let locations = "";
-      if (req.body.locations !== null) {
-        if (req.body.locations.length > 0) {
-          locations = req.body.locations.join();
-          whereClauseNeeded = true;
-        }
-      }
-      let keywordsPresent = false;
-      if (req.body.keywords !== null) {
-        if (req.body.keywords.length > 0) {
-          //keywords = req.body.keywords.join();
-          whereClauseNeeded = true;
-          keywordsPresent = true;
-        }
-      }
-      let whereClause = "";
-      if (whereClauseNeeded) {
-        let ANDNeeded = false;
-        whereClause = " WHERE ";
-        if (skills !== "") {
-          whereClause += `JobSkills.Skillid IN (${skills})`;
-          ANDNeeded = true;
-        }
-        if (locations !== "") {
-          if (ANDNeeded) {
-            whereClause += " AND ";
+      let keywords = `%${req.body.keywords}%`;
+      // if (req.body.keywords !== null) {
+      //   if (req.body.keywords.length > 0) {
+      //     keywordsArr = [];
+      //     req.body.keywords.forEach(element => {
+      //       keywordsArr.push(`{ title: { [Op.like]: "%${element}%" } }`);
+      //       keywordsArr.push(`{ description: { [Op.like]: "%${element}%" } }`);
+      //     });
+      //     keywords = keywordsArr.join(); //`{[Op.or]: ['${keywordsArr.join()}']}`;
+      //     console.log(keywords);
+      //   }
+      // }
+      const Op = db.Sequelize.Op;
+      const condition = {
+        [Op.and]: [
+          { "$JobSkills.SkillId$": req.body.skills },
+          { LocationId: req.body.locations },
+          {
+            [Op.or]: [
+              { title: { [Op.like]: keywords } },
+              { description: { [Op.like]: keywords } }
+            ]
           }
-          whereClause += `Jobs.Locationid IN(${locations})`;
-          ANDNeeded = true;
-        }
-        if (keywordsPresent) {
-          let keywords = req.body.keywords.map(keyword => {
-            return `--field-- LIKE '%${keyword}%'`;
-          });
-          let keywordsCondition = keywords.join();
-          keywordsCondition = keywordsCondition.replace(/,/g, " OR ");
-          let keywordsTitle = keywordsCondition.replace(
-            /--field--/g,
-            "Jobs.Title"
-          );
-          let keywordsDescription = keywordsCondition.replace(
-            /--field--/g,
-            "Jobs.Description"
-          );
-          if (ANDNeeded) {
-            whereClause += " AND ";
-          }
-          whereClause += `(${keywordsTitle}) OR (${keywordsDescription})`;
-        }
-        console.log("---");
-        console.log("query:");
-        console.log(jobsSelectQuery + whereClause);
-        console.log("---");
-      }
-      let records = await db.sequelize.query(jobsSelectQuery + whereClause, {
-        bind: ["active"],
-        type: db.sequelize.QueryTypes.SELECT
-      });
-      console.log(records);
-      res.status(200).json(records);
+        ]
+      };
+
+      getJobs(condition, res);
     } catch (err) {
       console.log(err);
       res.send("Error occurred:" + err);
@@ -110,17 +109,15 @@ module.exports = function(app) {
     try {
       console.log("api get received at /api/locations");
       //it returns an array of objects that include location id and location name. The front-end can use this to populate the drop-downs, etc...
-      //object below is for initial testing only. The plan is to populate it from the database.
-      let result = [];
-      result.push({
-        locationId: "1",
-        locationName: "Location1"
-      });
-      result.push({
-        locationId: "2",
-        locationName: "Location2"
-      });
-      res.json(result);
+      db.Locations.findAll({ attributes: ["id", "location"] }).then(
+        async allLocations => {
+          let output = allLocations.map(location => {
+            return { id: location.id, location: location.location };
+          });
+          console.log(output);
+          res.status(200).json(output);
+        }
+      );
     } catch (err) {
       console.log(err);
       res.send("Error occurred:" + err);
@@ -131,17 +128,15 @@ module.exports = function(app) {
     try {
       console.log("api get received at /api/skills");
       //it returns an array of objects that include skill id and skill title. The front-end can use this to populate the drop-downs, etc...
-      //object below is for initial testing only. The plan is to populate it from the database.
-      let result = [];
-      result.push({
-        skillId: "1",
-        skillTitle: "Skill1"
-      });
-      result.push({
-        skillId: "2",
-        skillTitle: "skill2"
-      });
-      res.json(result);
+      db.Skills.findAll({ attributes: ["id", "skill"] }).then(
+        async allSkills => {
+          let output = allSkills.map(skill => {
+            return { id: skill.id, skill: skill.skill };
+          });
+          console.log(output);
+          res.status(200).json(output);
+        }
+      );
     } catch (err) {
       console.log(err);
       res.send("Error occurred:" + err);
