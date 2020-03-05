@@ -48,7 +48,7 @@ function getJobs(condition, res) {
   });
 }
 
-module.exports = function(app) {
+module.exports = function (app) {
   app.get("/api/jobs", async (req, res) => {
     try {
       console.log("api get received at /api/jobs");
@@ -128,17 +128,15 @@ module.exports = function(app) {
     try {
       console.log("api get received at /api/skills");
       //it returns an array of objects that include skill id and skill title. The front-end can use this to populate the drop-downs, etc...
-      //object below is for initial testing only. The plan is to populate it from the database.
-      let result = [];
-      result.push({
-        skillId: "1",
-        skillTitle: "Skill1"
-      });
-      result.push({
-        skillId: "2",
-        skillTitle: "skill2"
-      });
-      res.json(result);
+      db.Skills.findAll({ attributes: ["id", "skill"] }).then(
+        async allSkills => {
+          let output = allSkills.map(skill => {
+            return { id: skill.id, skill: skill.skill };
+          });
+          console.log(output);
+          res.status(200).json(output);
+        }
+      );
     } catch (err) {
       console.log(err);
       res.send("Error occurred:" + err);
