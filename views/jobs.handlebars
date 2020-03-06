@@ -24,13 +24,21 @@
 
     <div class="form-group" id="search-form">
       <label for="exampleFormControlSelect1">Location</label>
-      <select class="form-control form-jobsearch" id="exampleFormControlSelect1">
+      <select class="form-control form-jobsearch" id="ddLocation">
         {{!-- handlebars for location --}}
         {{#each locations}}
-          <option>{{this.location}}</option>
+        <option>{{this.location}}</option>
+        {{/each}}
+      </select>
+       <label for="exampleFormControlSelect1">Skills</label>
+      <select class="form-control form-jobsearch" id="ddSkills">
+        {{!-- handlebars for skills --}}
+        {{#each skills}}
+        <option>{{this.skill}}</option>
         {{/each}}
       </select>
     </div>
+ 
     <div class="form-group" id="search-Div">
 
       <label for="exampleInputEmail1">Job Title</label>
@@ -38,22 +46,15 @@
     </div>
 
     <button type="button" class="btn btn-primary" id="search-button">
-        <span> <i class="fas fa-search"></i> </span> Find Job
-      </button>
+      <span> <i class="fas fa-search"></i> </span> Find Job
+    </button>
   </div>
   <!-- end of container for job search form -->
 </div>
 <!-- end of nav,jumbotron-fluid,video display -->
 
-<div class="container result-title">
-  <h1 class="res-title">Your Search result</h1>
-</div>
 
-
-
-<!-- skill-set container -->
-<div class="container-fluid" id="skill-set">
-  
+<div class="container-fluid" id="flex">
   <!-- first row -->
   <div class="card-deck">
     <!-- skill-set 1 -->
@@ -73,8 +74,45 @@
       </div>
     </div>
     {{/each}}
+
+    {{!-- Handlebars for job search results - might have to delete this  --}}
+    {{#each jobResult}}
+    <!-- job serach output -->
+    <div class="card job-card">
+      <h5 class="card-header" style="border-bottom: 1px solid #fff;">{{jobTitle}}</h5>
+
+      <div class="card-body">
+        <h5 class="card-title">{{this.locationName}}</h5>
+        <hr style="background-color: #DC4749">
+
+        <p class="card-text">{{this.jobSkills}}{{this.jobRequirements}}</p>
+        <!-- apply btn -->
+        <button type="button" id="applyJob" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom"
+          title="Apply">
+          <i class="far fa-check-square fa-2x"></i>
+        </button>
+        <!-- save btn -->
+        <button type="button" id="saveJob" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom"
+          title="Save">
+          <i class="far fa-star fa-2x"></i>
+        </button>
+      </div>
+    </div>
+    {{/each}}
   </div>
   <!-- end of first row -->
+</div>
+
+<div class="container result-title">
+  <h1 class="res-title"><span> Your Search result</span> <a href="#adjust">
+      <button class=" btn blink_me2"><i class="fas fa-arrow-down fa-2x"></i></button>
+    </a></h1>
+</div>
+
+
+
+<!-- skill-set container -->
+<div class="container-fluid" id="skill-set">
 
 
   <!-- second row -->
@@ -84,8 +122,8 @@
 
   </div>
 
-{{!-- TEST ROW - WILL DELETE LATER --}}
-    <div class="card-deck col-8 ">
+  {{!-- TEST ROW - WILL DELETE LATER 
+    <div class="card-deck">
 
       <div class="card job-card " >
       <h5 class="card-header" style="border-bottom: 1px solid #fff;">TEST JOB TITLE</h5>
@@ -110,11 +148,12 @@
     </div>
 
   </div>
-</div> 
+  --}}
+</div>
 <!-- end of skill-set container -->
 
 {{!-- jQuery --}}
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 {{!-- javascript --}}
-  <script src="/js/jobs.js" type="text/javascript"></script>
-
+<script src="/js/jobs.js" type="text/javascript"></script>
