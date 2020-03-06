@@ -143,24 +143,38 @@ module.exports = function(app) {
     }
   });
 
-  // Get all examples
-  // app.get("/api/examples", function (req, res) {
-  //   db.Example.findAll({}).then(function (dbExamples) {
-  //     res.json(dbExamples);
-  //   });
-  // });
-
-  // // Create a new example
-  // app.post("/api/examples", function (req, res) {
-  //   db.Example.create(req.body).then(function (dbExample) {
-  //     res.json(dbExample);
-  //   });
-  // });
-
-  // // Delete an example by id
-  // app.delete("/api/examples/:id", function (req, res) {
-  //   db.Example.destroy({ where: { id: req.params.id } }).then(function (dbExample) {
-  //     res.json(dbExample);
-  //   });
-  // });
+  app.post("/api/apply", async (req, res) => {
+    try {
+      //Postman test
+      // {
+      //   "jobId": 1,
+      //     "note": "I really really want this job"
+      // }
+      console.log("api post received at /api/apply");
+      console.log(req.body.jobId);
+      console.log(req.body.note);
+      db.Applications.findOrCreate({
+        where: {
+          JobId: req.body.jobId,
+          UserId: 1
+        },
+        defaults: {
+          JobId: req.body.jobId,
+          UserId: 1,
+          note: req.body.note
+        }
+      }).then(result => {
+        let application = result[0]; // the instance of the application
+        let created = result[1]; // boolean stating if it was created or not
+        if (created) {
+          res.status(200).json(application);
+        } else {
+          res.status(403).send("Application already exists.");
+        }
+      });
+    } catch (err) {
+      console.log(err);
+      res.send("Error occurred:" + err);
+    }
+  });
 };
