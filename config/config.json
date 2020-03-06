@@ -1,14 +1,14 @@
 {
   "development": {
     "username": "root",
-    "password": null,
+    "password": "yourpassword",
     "database": "virtual_fair_db",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": null,
+    "password": "yourpassword",
     "database": "testdb",
     "host": "localhost",
     "dialect": "mysql",

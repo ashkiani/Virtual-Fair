@@ -73,31 +73,6 @@
       </div>
     </div>
     {{/each}}
-
-  {{!-- Handlebars for job search results - might have to delete this  --}}
-    {{#each jobResult}}
-    <!-- job serach output -->
-    <div class="card job-card">
-      <h5 class="card-header" style="border-bottom: 1px solid #fff;">{{jobTitle}}</h5>
-
-      <div class="card-body">
-        <h5 class="card-title">{{this.locationName}}</h5>
-        <hr style="background-color: #DC4749">
-
-        <p class="card-text">{{this.jobSkills}}{{this.jobRequirements}}</p>
-        <!-- apply btn -->
-        <button type="button" id="applyJob" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom"
-          title="Apply">
-          <i class="far fa-check-square fa-2x"></i>
-        </button>
-        <!-- save btn -->
-        <button type="button" id="saveJob" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom"
-          title="Save">
-          <i class="far fa-star fa-2x"></i>
-        </button>
-      </div>
-    </div>
-    {{/each}}
   </div>
   <!-- end of first row -->
 
@@ -105,34 +80,14 @@
   <!-- second row -->
   <div class="card-deck" id="mainDiv">
 
-    {{!-- <div class="card job-card">
-      <h5 class="card-header" style="border-bottom: 1px solid #fff;">Job Title</h5>
-
-
-      <div class="card-body" id="DivTwo">
-        <h5 class="card-title">Location</h5>
-        <hr style="background-color: #DC4749">
-
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <!-- apply btn -->
-         <button type="button" id="applyJob" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom"
-          title="Apply">
-          <i class="far fa-check-square fa-2x"></i>
-        </button> 
-        <!-- save btn -->
-       <button type="button" id="saveJob" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom"
-          title="Save">
-          <i class="far fa-star fa-2x"></i>
-        </button>
-      </div>
-    </div> --}}
+                 {{!-- JOBS SEARCH RESULTS --}}
 
   </div>
 
 {{!-- TEST ROW - WILL DELETE LATER --}}
     <div class="card-deck col-8 ">
 
-    <div class="card job-card " id="DivOne">
+      <div class="card job-card " >
       <h5 class="card-header" style="border-bottom: 1px solid #fff;">TEST JOB TITLE</h5>
 
 
