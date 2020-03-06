@@ -5,14 +5,10 @@ $("#search-button").on("click", function () {
   // Make a new search
   var newSearch = {
     locations: [
-      $("#ddLocation")
-        .val()
-        .trim()
+      $("#ddLocation").data("id")
     ],
     skills: [
-      $("#ddSkills")
-        .val()
-        .trim()
+      $("#ddSkills").data("id")
     ],
     keywords: $("#jobSearch")
       .val()

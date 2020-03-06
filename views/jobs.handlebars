@@ -27,14 +27,14 @@
       <select class="form-control form-jobsearch" id="ddLocation">
         {{!-- handlebars for location --}}
         {{#each locations}}
-        <option>{{this.location}}</option>
+        <option data-id="{{this.id}}">{{this.location}} {{this.id}}</option>
         {{/each}}
       </select>
        <label for="exampleFormControlSelect1">Skills</label>
       <select class="form-control form-jobsearch" id="ddSkills">
         {{!-- handlebars for skills --}}
         {{#each skills}}
-        <option>{{this.skill}}</option>
+        <option data-id="{{this.id}}">{{this.skill}} {{this.id}}</option>
         {{/each}}
       </select>
     </div>
