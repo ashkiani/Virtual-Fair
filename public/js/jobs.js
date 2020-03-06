@@ -1,14 +1,41 @@
 // On-click AJAX call for Keyword search
 $("#search-button").on("click", function () {
-  // save the character they typed into the character-search input
-  var searchJobs = $("#jobSearch")
-    .val()
-    .trim();
+  event.preventDefault();
 
-  console.log(searchJobs);
+  // Make a new serch
+  var newSearch = {
+    cities: $("#ddLocation")
+      .val()
+      .trim(),
+    skills: $("#ddSkills")
+      .val()
+      .trim(),
+    keywords: $("#jobSearch")
+      .val()
+      .trim()
+  };
+
+  // $.post("/api/jobs", newSearch)
+  //   // On success, run the following code
+  //   .then(function (data) {
+  //     // Log the data we found
+  //     alert(data);
+  //     console.log(data);
+  //   });
+
+  // AJAX - search job criteria
+  $.ajax("/api/jobs", newSearch, {
+    type: "POST"
+  }).then(function(data) {
+    console.log(JSON.stringify(data));
+    //render job results
+    //loadJobs(data);
+  });
+
+  console.log(newSearch);
 });
 
-// AJAX - search by keyword
+// AJAX - get all jobs from database
 $.ajax("/api/jobs", {
   type: "GET"
 }).then(function (data) {

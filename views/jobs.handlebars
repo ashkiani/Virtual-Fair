@@ -24,13 +24,21 @@
 
     <div class="form-group" id="search-form">
       <label for="exampleFormControlSelect1">Location</label>
-      <select class="form-control form-jobsearch" id="exampleFormControlSelect1">
+      <select class="form-control form-jobsearch" id="ddLocation">
         {{!-- handlebars for location --}}
         {{#each locations}}
         <option>{{this.location}}</option>
         {{/each}}
       </select>
+       <label for="exampleFormControlSelect1">Skills</label>
+      <select class="form-control form-jobsearch" id="ddSkills">
+        {{!-- handlebars for skills --}}
+        {{#each skills}}
+        <option>{{this.skill}}</option>
+        {{/each}}
+      </select>
     </div>
+ 
     <div class="form-group" id="search-Div">
 
       <label for="exampleInputEmail1">Job Title</label>
