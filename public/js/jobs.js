@@ -1,9 +1,10 @@
+// AJAX GET to pull all jobs from database 
 $.ajax("/api/jobs", {
   type: "GET"
 }).then(function(data) {
   console.log(data);
   //render job results
-  loadJobs(data);
+  // loadJobs(data);
 });
 
 
@@ -34,21 +35,16 @@ $("#search-button").on("click", function() {
   }).then(function(data) {
     console.log(JSON.stringify(data));
     //render job results
-    //loadJobs(data);
+    loadJobs(data);
   });
 
   console.log(newSearch);
 });
 
-// AJAX - get all jobs from database
-$.ajax("/api/jobs", {
-  type: "GET"
-}).then(function(data) {
-  console.log(data);
-  //render job results
-  loadJobs(data);
-});
+// AJAX POST Jobs Applied 
 
+
+// function to dynamically render search result html
 function loadJobs(data) {
   var mainDiv = $("#mainDiv").html("");
 
