@@ -1,21 +1,21 @@
 {
-  "development": {
-    "username": "root",
-    "password": null,
-    "database": "virtual_fair_db",
-    "host": "localhost",
-    "dialect": "mysql"
-  },
-  "test": {
-    "username": "root",
-    "password": null,
-    "database": "testdb",
-    "host": "localhost",
-    "dialect": "mysql",
-    "logging": false
-  },
-  "production": {
-    "use_env_variable": "JAWSDB_URL",
-    "dialect": "mysql"
-  }
+    "development": {
+        "username": "root",
+        "password": "nikola4mysql2020",
+        "database": "virtual_fair_db",
+        "host": "localhost",
+        "dialect": "mysql"
+    },
+    "test": {
+        "username": "root",
+        "password": "nikola4mysql2020",
+        "database": "testdb",
+        "host": "localhost",
+        "dialect": "mysql",
+        "logging": false
+    },
+    "production": {
+        "use_env_variable": "JAWSDB_URL",
+        "dialect": "mysql"
+    }
 }
