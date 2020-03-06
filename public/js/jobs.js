@@ -1,59 +1,53 @@
-// On-click AJAX call for Keyword search
-$("#search-button").on("click", function() {
-  // save the character they typed into the character-search input
-  var searchJobs = $("#jobSearch")
-    .val()
-    .trim();
-
-  console.log(searchJobs);
-
-  // AJAX - search by keyword
-  $.ajax("/api/jobs", {
-    type: "GET"
-  }).then(function(data) {
-    console.log(data.length);
-    //render job results
-    loadJobs(data);
-  });
+$.ajax("/api/jobs", {
+  type: "GET"
+}).then(function(data) {
+  console.log(data);
+  //render job results
+  loadJobs(data);
 });
 
-// // On-click AJAX call for Locations search
-// $("#search-button").on("click", function() {
-//   // save the character they typed into the character-search input
-//   var searchJobs = $("#jobSearch")
-//     .val()
-//     .trim();
 
-//   console.log(searchJobs);
+// On-click AJAX call for Keyword search
+$("#search-button").on("click", function() {
+  event.preventDefault();
 
-//   // AJAX - search by keyword
-//   $.ajax("/api/jobs", {
-//     type: "GET"
-//   }).then(function(data) {
-//     console.log(data);
-//     // code to display compare searchJobs to Database data
-//     // Then display on page
-//   });
-// });
+  // Make a new search
+  var newSearch = {
+    locations: [
+      $("#ddLocation")
+        .val()
+        .trim()
+    ],
+    skills: [
+      $("#ddSkills")
+        .val()
+        .trim()
+    ],
+    keywords: $("#jobSearch")
+      .val()
+      .trim()
+  };
 
-// // On-click AJAX call for Skills search
-// $("#search-button").on("click", function() {
-//   // save the character they typed into the character-search input
-//   var searchJobs = $("#jobSearch")
-//     .val()
-//     .trim();
+  // AJAX - search job criteria
+  $.ajax("/api/jobs", newSearch, {
+    type: "POST"
+  }).then(function(data) {
+    console.log(JSON.stringify(data));
+    //render job results
+    //loadJobs(data);
+  });
 
-//   console.log(searchJobs);
+  console.log(newSearch);
+});
 
-//   // AJAX - search by keyword
-//   $.ajax("/api/jobs", {
-//     type: "GET"
-//   }).then(function(data) {
-//     console.log(data);
-//     // code to display compare searchJobs to Database data
-//     // Then display on page
-//   });
-// });
+// AJAX - get all jobs from database
+$.ajax("/api/jobs", {
+  type: "GET"
+}).then(function(data) {
+  console.log(data);
+  //render job results
+  loadJobs(data);
+});
 
 function loadJobs(data) {
   var mainDiv = $("#mainDiv").html("");
@@ -65,28 +59,27 @@ function loadJobs(data) {
       var jobTitle = $("<h5>")
         .attr("class", "card-header")
         .css({ "border-bottom": "1px solid #fff" })
-        .text(data[i].Title);
+        .text(data[i].title);
       divOne.append(jobTitle);
       var divTwo = $("<div>").attr("class", "card-body");
       divOne.append(divTwo);
       var location = $("<h5>")
         .attr("class", "card-title")
-        .text(data[i].Location);
+        .text(data[i].location);
       divTwo.append(location);
       var hr = $("<hr>").css("background-colo", "#DC4749");
       divTwo.append(hr);
       var p = $("<p>")
         .attr("class", "card-text")
-        .text(data[i].Description);
+        .text(data[i].description);
       divTwo.append(p);
       var apply = $("<button>")
         .attr("type", "button")
-        .attr("id", "applyJob")
         .attr("class", "btn btn-secondary")
         .attr("data-toggle", "tooltip")
         .attr("title", "Apply");
-      var i = $("<i>").attr("class", "far fa-check-square fa-2x");
-      apply.append(i);
+      var check = $("<i>").attr("class", "far fa-check-square fa-2x");
+      apply.append(check);
       divTwo.append(apply);
       var save = $("<button>")
         .attr("type", "button")
