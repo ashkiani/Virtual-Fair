@@ -1,59 +1,21 @@
 // On-click AJAX call for Keyword search
-$("#search-button").on("click", function() {
+$("#search-button").on("click", function () {
   // save the character they typed into the character-search input
   var searchJobs = $("#jobSearch")
     .val()
     .trim();
 
   console.log(searchJobs);
-
-  // AJAX - search by keyword
-  $.ajax("/api/jobs", {
-    type: "GET"
-  }).then(function(data) {
-    console.log(data.length);
-    //render job results
-    loadJobs(data);
-  });
 });
 
-// // On-click AJAX call for Locations search
-// $("#search-button").on("click", function() {
-//   // save the character they typed into the character-search input
-//   var searchJobs = $("#jobSearch")
-//     .val()
-//     .trim();
-
-//   console.log(searchJobs);
-
-//   // AJAX - search by keyword
-//   $.ajax("/api/jobs", {
-//     type: "GET"
-//   }).then(function(data) {
-//     console.log(data);
-//     // code to display compare searchJobs to Database data
-//     // Then display on page
-//   });
-// });
-
-// // On-click AJAX call for Skills search
-// $("#search-button").on("click", function() {
-//   // save the character they typed into the character-search input
-//   var searchJobs = $("#jobSearch")
-//     .val()
-//     .trim();
-
-//   console.log(searchJobs);
-
-//   // AJAX - search by keyword
-//   $.ajax("/api/jobs", {
-//     type: "GET"
-//   }).then(function(data) {
-//     console.log(data);
-//     // code to display compare searchJobs to Database data
-//     // Then display on page
-//   });
-// });
+// AJAX - search by keyword
+$.ajax("/api/jobs", {
+  type: "GET"
+}).then(function (data) {
+  console.log(data);
+  //render job results
+  loadJobs(data);
+});
 
 function loadJobs(data) {
   var mainDiv = $("#mainDiv").html("");
@@ -81,12 +43,11 @@ function loadJobs(data) {
       divTwo.append(p);
       var apply = $("<button>")
         .attr("type", "button")
-        .attr("id", "applyJob")
         .attr("class", "btn btn-secondary")
         .attr("data-toggle", "tooltip")
         .attr("title", "Apply");
-      var i = $("<i>").attr("class", "far fa-check-square fa-2x");
-      apply.append(i);
+      var check = $("<i>").attr("class", "far fa-check-square fa-2x");
+      apply.append(check);
       divTwo.append(apply);
       var save = $("<button>")
         .attr("type", "button")

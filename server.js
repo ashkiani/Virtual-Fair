@@ -3,9 +3,6 @@ var express = require("express");
 var exphbs = require("express-handlebars");
 
 var db = require("./models");
-var notification = require("./notification/notification");
-
-// notification.sendText();
 
 var app = express();
 var PORT = process.env.PORT || 3000;
@@ -47,4 +44,4 @@ db.sequelize.sync(syncOptions).then(function() {
   });
 });
 
-module.exports = {app, notification};
+module.exports = app;
