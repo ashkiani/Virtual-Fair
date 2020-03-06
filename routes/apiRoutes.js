@@ -29,7 +29,7 @@ module.exports = function(app) {
       //   "keywords":["web","JavaScript","cool"]
       //   }
       console.log(req.body);
-      console.log("City" + req.body.cities);
+      console.log(req.body.cities);
       console.log(req.body.skills);
       console.log(req.body.keywords);
       let whereClauseNeeded = false;
