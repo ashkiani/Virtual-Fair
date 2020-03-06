@@ -1,5 +1,5 @@
 // On-click AJAX call for Keyword search
-$("#search-button").on("click", function() {
+$("#search-button").on("click", function () {
   event.preventDefault();
 
   // Make a new search
@@ -22,7 +22,7 @@ $("#search-button").on("click", function() {
   // AJAX - search job criteria
   $.ajax("/api/jobs", newSearch, {
     type: "POST"
-  }).then(function(data) {
+  }).then(function (data) {
     console.log(JSON.stringify(data));
     //render job results
     //loadJobs(data);
@@ -37,10 +37,6 @@ $.ajax("/api/jobs", {
 }).then(function(data) {
   console.log(data);
   //render job results
-  loadJobs(data);
-});
-
-function loadJobs(data) {
   var mainDiv = $("#mainDiv").html("");
 
   if (data.length > 0) {
@@ -83,4 +79,5 @@ function loadJobs(data) {
       divTwo.append(save);
     }
   }
-}
+});
+
