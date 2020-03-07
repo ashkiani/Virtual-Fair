@@ -72,7 +72,7 @@ $(document).ready(function() {
     $.ajax("/api/jobs", {
       data: newSearch,
       type: "POST"
-    }).then(function (data) {
+    }).then(function(data) {
       console.log(data);
       //render job results
       renderJobs(data);
