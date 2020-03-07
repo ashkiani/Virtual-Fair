@@ -1,9 +1,27 @@
-$(document).ready(function() {
+$(document).ready(function () {
   console.log("ready!");
+  function btnClick() {
+    let applicationData = {
+      jobId: $(this).data("id"),
+      note: ""
+    };
+    $.ajax("/api/apply", {
+      data: applicationData,
+      type: "POST"
+    })
+      .done(function() {
+        alert("You application was submitted");
+      })
+      .fail(function() {
+        alert("You have already applied for this job");
+      });
+  }
   function renderJobs(data) {
     var mainDiv = $("#mainDiv").html("");
     if (data.length > 0) {
       for (var i = 0; i < data.length; i++) {
+        console.log("id");
+        console.log(data[i].id);
         var divOne = $("<div>").attr("class", "card job-card");
         mainDiv.append(divOne);
         var jobTitle = $("<h5>")
@@ -25,9 +43,11 @@ $(document).ready(function() {
         divTwo.append(p);
         var apply = $("<button>")
           .attr("type", "button")
-          .attr("class", "btn btn-secondary")
-          .attr("data-toggle", "tooltip")
-          .attr("title", "Apply");
+          .data("id", data[i].id)
+          .attr("class", "btn btn-secondary apply")
+          // .attr("data-toggle", "tooltip")
+          .attr("title", "Apply")
+          .click(btnClick);
         var check = $("<i>").attr("class", "far fa-check-square fa-2x");
         apply.append(check);
         divTwo.append(apply);
@@ -43,6 +63,11 @@ $(document).ready(function() {
       }
     }
   }
+
+  $("#apply").click(function() {
+    alert("Handler for .click() called. btn");
+  });
+
   // On-click AJAX call for Keyword search
   $("#search-button").on("click", function() {
     event.preventDefault();
