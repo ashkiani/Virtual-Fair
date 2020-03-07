@@ -35,15 +35,16 @@ module.exports = function(app) {
           attributes: ["title"],
           where: { id: dbApplications[i].JobId }
         });
-        let status = await db.AdminActions.findOne({
-          attributes: ["ActionId", "updatedAt"],
-          where: { id: dbApplications[i].id },
-          order: ["updatedAt"]
-        });
-        let action = await db.Actions.findOne({
-          attributes: ["action"],
-          where: { id: status.ActionId }
-        });
+
+        // let status = await db.AdminActions.findOne({
+        //   attributes: ["ActionId", "updatedAt"],
+        //   where: { id: dbApplications[i].id },
+        //   order: ["updatedAt"]
+        // });
+        // let action = await db.Actions.findOne({
+        //   attributes: ["action"],
+        //   where: { id: status.ActionId }
+        // });
         foundApplications.push({
           id: dbApplications[i].id,
           note: dbApplications[i].note,
@@ -51,12 +52,12 @@ module.exports = function(app) {
           userName: `${userName.firstname} ${userName.lastname}`,
           jobId: dbApplications[i].JobId,
           jobTitle: jobTitle.title,
-          status: action.action,
-          date: status.updatedAt
+          status: "Submitted", //action.action
+          date: dbApplications[i].updatedAt
         });
       }
       console.log(foundApplications);
-      res.render("status", foundApplications);
+      res.render("status", { array: foundApplications });
     });
   });
 
@@ -96,6 +97,11 @@ module.exports = function(app) {
       console.log(foundApplications);
       res.render("admin", foundApplications);
     });
+  });
+
+  // Render 404 page for any unmatched routes
+  app.get("/worldmap", function(req, res) {
+    res.render("worldmap");
   });
 
   // Render 404 page for any unmatched routes

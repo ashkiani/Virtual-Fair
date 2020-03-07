@@ -60,7 +60,6 @@
 /* container for search */
 
 #search-container {
-    margin-top: 120px;
     color: #fff;
     text-align: center;
     font-family: "Coda Caption", sans-serif;
@@ -135,13 +134,12 @@
 /* search title */
 
 .result-title {
-    font-size: 55px;
+    font-size: 45px;
     border-radius: 10px;
     text-shadow: 1px 0px 1px #cccccc, 0px 1px 1px #eeeeee, 2px 1px 1px #cccccc, 1px 2px 1px #eeeeee, 3px 2px 1px #cccccc, 2px 3px 1px #eeeeee, 4px 3px 1px #cccccc, 3px 4px 1px #eeeeee, 5px 4px 1px #cccccc, 4px 5px 1px #eeeeee, 6px 5px 1px #cccccc, 5px 6px 1px #eeeeee, 7px 6px 1px #cccccc, 2px 2px 2px rgba(206, 89, 55, 0);
     text-align: center;
     margin-top: 100px;
-    padding: 50px;
-    border-radius: 8px;
+    padding: 30px;
     background-color: #ce5937;
     background: -moz-linear-gradient( -45deg, #ce5937 0%, #e52b50 50%, #c59237 100%);
     background: -webkit-linear-gradient( -45deg, #ce5937 0%, #e52b50 50%, #c59237 100%);
@@ -155,17 +153,24 @@
 
 /* jobs by skillset */
 
-#skill-set {
+#mainDiv {
     margin: 0 auto;
     margin-top: 100px;
+    width: 70%;
+}
+
+#flex {
+    margin-top: 25px;
 }
 
 .card-deck {
-    width: 98%;
     margin: 15px 0px 15px 15px;
+    margin: 0 auto;
 }
 
 .skill-card {
+    position: relative;
+    left: 14%;
     border-radius: 8px;
     background-color: #515151;
     color: #fff;
@@ -186,3 +191,22 @@
 
 
 /* end of jobs by skillset*/
+
+
+/* blink arrow */
+
+.blink_me2 {
+    animation: blinker 1s linear infinite;
+    color: #fff;
+    border-radius: 80%;
+    background-color: background: #CE5937;
+    background: -moz-linear-gradient(-45deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
+    background: -webkit-linear-gradient(-45deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
+    background: linear-gradient(135deg, #CE5937 0%, #E52B50 50%, #C59237 100%);
+}
+
+@keyframes blinker {
+    30% {
+        opacity: 0;
+    }
+}

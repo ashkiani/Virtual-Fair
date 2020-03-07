@@ -15,18 +15,30 @@ INSERT INTO virtual_fair_db.userstypes SET UserId=2,UserTypeId=2,createdAt=now()
 INSERT INTO virtual_fair_db.skills SET skill='JavaScript',createdAt=now(),updatedAt=now();
 INSERT INTO virtual_fair_db.skills SET skill='HTML',createdAt=now(),updatedAt=now();
 INSERT INTO virtual_fair_db.skills SET skill='CSS',createdAt=now(),updatedAt=now();
+INSERT INTO virtual_fair_db.skills SET skill='SQL',createdAt=now(),updatedAt=now();
+INSERT INTO virtual_fair_db.skills SET skill='Project Management',createdAt=now(),updatedAt=now();
+INSERT INTO virtual_fair_db.skills SET skill='MongoDB',createdAt=now(),updatedAt=now();
 
 INSERT INTO virtual_fair_db.requirements SET requirement='bachelor degree',createdAt=now(),updatedAt=now();
 
 INSERT INTO virtual_fair_db.locations SET location='Arlington',createdAt=now(),updatedAt=now();
+INSERT INTO virtual_fair_db.locations SET location='DC',createdAt=now(),updatedAt=now();
+INSERT INTO virtual_fair_db.locations SET location='LA',createdAt=now(),updatedAt=now();
 
-INSERT INTO virtual_fair_db.jobs SET title='Web Developer',description='This a fron-end position',locationId=1 ,createdAt=now(),updatedAt=now();
+INSERT INTO virtual_fair_db.jobs SET title='Web Developer',description='This a front-end position',locationId=1 ,createdAt=now(),updatedAt=now();
+INSERT INTO virtual_fair_db.jobs SET title='Lead Developer',description='Lead a team of developers',locationId=2 ,createdAt=now(),updatedAt=now();
+INSERT INTO virtual_fair_db.jobs SET title='Database Admin',description='SQL experience required',locationId=3 ,createdAt=now(),updatedAt=now();
 
 INSERT INTO virtual_fair_db.jobskills SET jobId=1, skillId=1,createdAt=now(),updatedAt=now();
 INSERT INTO virtual_fair_db.jobskills SET jobId=1, skillId=2,createdAt=now(),updatedAt=now();
 INSERT INTO virtual_fair_db.jobskills SET jobId=1, skillId=3,createdAt=now(),updatedAt=now();
+INSERT INTO virtual_fair_db.jobskills SET jobId=2, skillId=4,createdAt=now(),updatedAt=now();
+INSERT INTO virtual_fair_db.jobskills SET jobId=2, skillId=5,createdAt=now(),updatedAt=now();
+INSERT INTO virtual_fair_db.jobskills SET jobId=3, skillId=6,createdAt=now(),updatedAt=now();
 
 INSERT INTO virtual_fair_db.jobrequirements SET jobId=1, requirementId=1,createdAt=now(),updatedAt=now();
+INSERT INTO virtual_fair_db.jobrequirements SET jobId=2, requirementId=1,createdAt=now(),updatedAt=now();
+INSERT INTO virtual_fair_db.jobrequirements SET jobId=3, requirementId=1,createdAt=now(),updatedAt=now();
 
 INSERT INTO virtual_fair_db.applications SET jobId=1, userId=1,note='Im very interested at this job.',createdAt=now(),updatedAt=now();
 
