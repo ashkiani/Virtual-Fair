@@ -99,7 +99,7 @@ module.exports = function(app) {
     });
   });
 
-  // Render worldmap
+  // Render 404 page for any unmatched routes
   app.get("/worldmap", function(req, res) {
     res.render("worldmap");
   });
