@@ -57,7 +57,7 @@ module.exports = function(app) {
         });
       }
       console.log(foundApplications);
-      res.render("status", { userApplications: foundApplications });
+      res.render("status", { array: foundApplications });
     });
   });
 
@@ -95,7 +95,7 @@ module.exports = function(app) {
         });
       }
       console.log(foundApplications);
-      res.render("admin", { adminActions: foundApplications });
+      res.render("admin", foundApplications);
     });
   });
 
