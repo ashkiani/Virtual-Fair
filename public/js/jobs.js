@@ -4,7 +4,7 @@ $.ajax("/api/jobs", {
 }).then(function(data) {
   console.log(data);
   //render job results
-  // loadJobs(data);
+  loadJobs(data);
 });
 
 
@@ -16,13 +16,13 @@ $("#search-button").on("click", function() {
   var newSearch = {
     locations: [
       $("#ddLocation")
-        .val()
-        .trim()
+        .find(":selected")
+        .data("id")
     ],
     skills: [
       $("#ddSkills")
-        .val()
-        .trim()
+        .find(":selected")
+        .data("id")
     ],
     keywords: $("#jobSearch")
       .val()
@@ -41,9 +41,7 @@ $("#search-button").on("click", function() {
   console.log(newSearch);
 });
 
-// AJAX POST Jobs Applied 
-
-
+// AJAX POST Jobs Applied
 // function to dynamically render search result html
 function loadJobs(data) {
   var mainDiv = $("#mainDiv").html("");
