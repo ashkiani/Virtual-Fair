@@ -27,14 +27,22 @@
       <select class="form-control form-jobsearch" id="ddLocation">
         {{!-- handlebars for location --}}
         {{#each locations}}
+<<<<<<< HEAD
         <option data-id="{{this.id}}">{{this.location}}</option>
+=======
+        <option id="{{this.id}}">{{this.location}}</option>
+>>>>>>> fa6a6f42cf84c4bd01e89f8bcb842748eecbaffd
         {{/each}}
       </select>
        <label for="exampleFormControlSelect1">Skills</label>
       <select class="form-control form-jobsearch" id="ddSkills">
         {{!-- handlebars for skills --}}
         {{#each skills}}
+<<<<<<< HEAD
         <option data-id="{{this.id}}">{{this.skill}}</option>
+=======
+        <option id="{{this.id}}">{{this.skill}}</option>
+>>>>>>> fa6a6f42cf84c4bd01e89f8bcb842748eecbaffd
         {{/each}}
       </select>
     </div>
@@ -48,7 +56,11 @@
     <button type="button" class="btn btn-primary" id="search-button">
       <span> <i class="fas fa-search"></i> </span> Find Job
     </button>
+<<<<<<< HEAD
      <a class="btn btn-primary" id="search-button" href="/worldmap" target="_blank">Search the Globe</a>
+=======
+    <a class="btn btn-primary resetButton" id="search-button" href="/jobs">Reset</a>
+>>>>>>> fa6a6f42cf84c4bd01e89f8bcb842748eecbaffd
   </div>
   
   <!-- end of container for job search form -->
@@ -59,7 +71,10 @@
 <div class="container-fluid" id="flex">
   <!-- first row -->
   <div class="card-deck">
+<<<<<<< HEAD
   
+=======
+>>>>>>> fa6a6f42cf84c4bd01e89f8bcb842748eecbaffd
 
     {{!-- Handlebars for job search results - might have to delete this  --}}
     {{#each jobResult}}
