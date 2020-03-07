@@ -48,7 +48,9 @@
     <button type="button" class="btn btn-primary" id="search-button">
       <span> <i class="fas fa-search"></i> </span> Find Job
     </button>
+     <a class="btn btn-primary" id="search-button" href="/worldmap" target="_blank">Search the Globe</a>
   </div>
+  
   <!-- end of container for job search form -->
 </div>
 <!-- end of nav,jumbotron-fluid,video display -->
@@ -57,23 +59,7 @@
 <div class="container-fluid" id="flex">
   <!-- first row -->
   <div class="card-deck">
-    <!-- skill-set 1 -->
-    {{!-- handlebars for skills tabs --}}
-    {{#each skills}}
-    <div class="card skill-card">
-      <div class="card-body">
-
-        <h5 class="card-title">Skill Set</h5>
-        <hr style="background-color: #DC4749">
-        <p class="card-text">{{this.skill}}</p>
-        <!-- view skill-set -->
-        <button type="button" id="view-skillset" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom"
-          title="View Jobs">
-          <i class="fas fa-eye fa-1x"></i>
-        </button>
-      </div>
-    </div>
-    {{/each}}
+  
 
     {{!-- Handlebars for job search results - might have to delete this  --}}
     {{#each jobResult}}
