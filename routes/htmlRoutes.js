@@ -57,7 +57,7 @@ module.exports = function(app) {
         });
       }
       console.log(foundApplications);
-      res.render("status", foundApplications);
+      res.render("status", { userApplications: foundApplications });
     });
   });
 
@@ -95,11 +95,11 @@ module.exports = function(app) {
         });
       }
       console.log(foundApplications);
-      res.render("admin", foundApplications);
+      res.render("admin", { adminActions: foundApplications });
     });
   });
 
-  // Render 404 page for any unmatched routes
+  // Render worldmap
   app.get("/worldmap", function(req, res) {
     res.render("worldmap");
   });
