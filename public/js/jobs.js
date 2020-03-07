@@ -31,15 +31,15 @@ $(document).ready(function() {
         var check = $("<i>").attr("class", "far fa-check-square fa-2x");
         apply.append(check);
         divTwo.append(apply);
-        var save = $("<button>")
-          .attr("type", "button")
-          .attr("id", "applyJob")
-          .attr("class", "btn btn-secondary")
-          .attr("data-toggle", "tooltip")
-          .attr("title", "Save");
-        var i2 = $("<i>").attr("class", "far fa-star fa-2x");
-        save.append(i2);
-        divTwo.append(save);
+        // var save = $("<button>")
+        //   .attr("type", "button")
+        //   .attr("id", "applyJob")
+        //   .attr("class", "btn btn-secondary")
+        //   .attr("data-toggle", "tooltip")
+        //   .attr("title", "Save");
+        // var i2 = $("<i>").attr("class", "far fa-star fa-2x");
+        // save.append(i2);
+        // divTwo.append(save);
       }
     }
   }
