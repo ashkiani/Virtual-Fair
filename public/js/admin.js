@@ -1,10 +1,10 @@
 $.ajax("/api/jobs", {
-    type: "GET"
-  }).then(function(data) {
-    console.log(data);
-    //render job results
-    loadJobs(data);
-  });// AJAX Call
+  type: "GET"
+}).then(function(data) {
+  console.log(data);
+  //render job results
+  loadJobs(data);
+});// AJAX Call
 
 
 function loadJobs(data) {
@@ -13,48 +13,82 @@ function loadJobs(data) {
   if (data.length > 0) {
     for (var i = 0; i < data.length; i++) {
       var divOne = $("<div>").attr("class", "row");
-      mainDiv.append(divdOne);
-      var CardOne = $("<div>").attr("id", "admin-card");
-      adminJumbotron.append(CardOne);
-      var JobAdmin = $("<h5>")
+      mainDiv.append(divOne);
+      var divTwo = $("<div>")
+        .attr("id", "admin-col")
+        .attr("class", "col-sm");
+      divOne.append(divTwo);
+      var divThree = $("<div>").attr("id", "admin-card");
+      divTwo.append(divThree);
+      var divFour = $("<div>")
         .attr("id", "adminJob-title")
-        .css({ "border-bottom": "1px solid #515151;" })
+        .attr("class", "card-header")
         .text(data[i].title);
-      CardOne.append(JobAdmin);
-      var CardTwo = $("<div>").attr("class", "card-body");
-      CardOne.append(CardTwo);
-      var adminLocation = $("<h5>")
-        .attr("id", "admin-location")
-        .text(data[i].location);
-      CardTwo.append(location);
-      var description = $("<P>")
+      divThree.append(divFour);
+      var divFive = $("<div>").attr("class", "card-body");
+      divThree.append(divFive);
+      var h5 = $("<h5>")
+        .attr("id", "admin-skill")
+        .attr("class", "card-title")
+        .text(data[i].skills);
+      divFive.append(h5);
+      var p = $("<p>")
         .attr("id", "admin-jobDescription")
+        .attr("class", "card-text")
         .text(data[i].description);
-      CardTwo.append(p);
-      var schedule = $("button")
+      divFive.append(p);
+      var divSix = $("<div>").attr("class", "card-footer text-muted");
+      divThree.append(divSix);
+      var schedule = $("<button>")
         .attr("type", "button")
+        .attr("class", "btn btn-secondary")
         .attr("id", "scheduleBtn")
         .attr("data-toggle", "tooltip")
-        .attr("title", "Schedule");
-      CardTwo.append(schedule);
-      var qualified = $("button")
+        .attr("data-placement", "bottom")
+        .attr("title", "Schedule")
+        .text("Schedule");
+      divThree.append(schedule);
+      var notQualified = $("<button>")
         .attr("type", "button")
+        .attr("class", "btn btn-secondary")
         .attr("id", "qualifiedBtn")
         .attr("data-toggle", "tooltip")
-        .attr("title", "Not Qualified");
-      CardTwo.append(qualified);
-      var Interviewed = $("button")
+        .attr("data-placement", "bottom")
+        .attr("title", "Not Qualified")
+        .text("Not Qualified");
+      divThree.append(notQualified);
+      var interviewed = $("<button>")
         .attr("type", "button")
+        .attr("class", "btn btn-secondary")
         .attr("id", "InterviewedBtn")
         .attr("data-toggle", "tooltip")
-        .attr("title", "Interviewed");
-      CardTwo.append(Interviewed);
-      var offer = $("button")
+        .attr("data-placement", "bottom")
+        .attr("title", "Interviewed")
+        .text("Interviewed");
+      divThree.append(interviewed);
+      var offer = $("<button>")
         .attr("type", "button")
-        .attr("id", "offerBtn")
+        .attr("class", "btn btn-secondary")
+        .attr("id", "InterviewedBtn")
         .attr("data-toggle", "tooltip")
-        .attr("title", "Offer the Job");
-      CardTwo.append(offer);
+        .attr("data-placement", "bottom")
+        .attr("title", "Offer the Job")
+        .text("Offer the Job");
+      divThree.append(offer);
+      var divSeven = $("<div>")
+        .attr("id", "admin-col")
+        .attr("class", "col-sm");
+      divOne.append(divSeven);
+      var divEight = $("<div>")
+        .attr("id", "admin-txt")
+        .attr("class", "form-group");
+      divSeven.append(divEight);
+      var textArea = $("<textarea>")
+        .attr("id", "exampleFormControlTextarea1")
+        .attr("class", "form-control")
+        .attr("placeholder", "Save Your Notes")
+        .attr("rows", "8");
+      divEight.append(textArea);
     }
   }
 }
