@@ -57,7 +57,7 @@ module.exports = function(app) {
         });
       }
       console.log(foundApplications);
-      res.render("status", foundApplications);
+      res.render("status", { array: foundApplications });
     });
   });
 
